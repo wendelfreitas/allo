@@ -31,8 +31,6 @@ describe('<HoverCard />', () => {
 
     await act(() => userEvent.hover(trigger));
 
-    await waitFor(() =>
-      expect(screen.getByText('@allo')).toBeInTheDocument()
-    );
+    await waitFor(() => expect(screen.getByText('@allo')).toBeInTheDocument());
   });
 });

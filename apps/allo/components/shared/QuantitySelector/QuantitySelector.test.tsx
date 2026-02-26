@@ -95,7 +95,9 @@ describe('<QuantitySelector />', () => {
 
   it('does not disable buttons when quantity is between min and max', () => {
     const onChange = jest.fn();
-    render(<QuantitySelector quantity={5} onChange={onChange} min={1} max={10} />);
+    render(
+      <QuantitySelector quantity={5} onChange={onChange} min={1} max={10} />
+    );
 
     const buttons = screen.getAllByRole('button');
     expect(buttons[0]).not.toBeDisabled();

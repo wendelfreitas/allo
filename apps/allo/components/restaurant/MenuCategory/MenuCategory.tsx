@@ -1,7 +1,7 @@
-"use client";
+'use client';
 
-import type { MenuItem as MenuItemType } from "../../../app/api/_data/types";
-import { MenuItemCard } from "../MenuItemCard/MenuItemCard";
+import type { MenuItem as MenuItemType } from '../../../app/api/_data/types';
+import { MenuItemCard } from '../MenuItemCard/MenuItemCard';
 
 interface MenuCategoryProps {
   name: string;

@@ -1,14 +1,14 @@
-"use client";
+'use client';
 
-import { Card } from "@allo/ui";
-import { Badge } from "@allo/ui";
-import { Clock, Bike } from "lucide-react";
-import Image from "next/image";
-import Link from "next/link";
-import { StarRating } from "../../shared/StarRating/StarRating";
-import { PriceDisplay } from "../../shared/PriceDisplay/PriceDisplay";
-import type { Restaurant } from "../../../app/api/_data/types";
-import { motion } from "framer-motion";
+import { Card } from '@allo/ui';
+import { Badge } from '@allo/ui';
+import { Clock, Bike } from 'lucide-react';
+import Image from 'next/image';
+import Link from 'next/link';
+import { StarRating } from '../../shared/StarRating/StarRating';
+import { PriceDisplay } from '../../shared/PriceDisplay/PriceDisplay';
+import type { Restaurant } from '../../../app/api/_data/types';
+import { motion } from 'framer-motion';
 
 interface RestaurantCardProps {
   restaurant: Restaurant;
@@ -29,9 +29,7 @@ export function RestaurantCard({ restaurant }: RestaurantCardProps) {
             />
             {!restaurant.isOpen && (
               <div className="absolute inset-0 flex items-center justify-center bg-black/60">
-                <span className="text-lg font-semibold text-white">
-                  Closed
-                </span>
+                <span className="text-lg font-semibold text-white">Closed</span>
               </div>
             )}
             {restaurant.isFeatured && (

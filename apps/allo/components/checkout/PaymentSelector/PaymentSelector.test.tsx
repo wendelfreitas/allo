@@ -5,7 +5,9 @@ describe('<PaymentSelector />', () => {
   it('renders the Payment Method heading', () => {
     render(<PaymentSelector value="card" onChange={jest.fn()} />);
 
-    expect(screen.getByRole('heading', { name: 'Payment Method' })).toBeInTheDocument();
+    expect(
+      screen.getByRole('heading', { name: 'Payment Method' })
+    ).toBeInTheDocument();
   });
 
   it('renders the Credit Card payment method', () => {

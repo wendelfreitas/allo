@@ -1,9 +1,9 @@
-"use client";
+'use client';
 
-import { Separator } from "@allo/ui";
-import { useCartStore } from "../../../store/cart";
-import { PriceDisplay } from "../../shared/PriceDisplay/PriceDisplay";
-import { restaurants } from "../../../app/api/_data/restaurants";
+import { Separator } from '@allo/ui';
+import { useCartStore } from '../../../store/cart';
+import { PriceDisplay } from '../../shared/PriceDisplay/PriceDisplay';
+import { restaurants } from '../../../app/api/_data/restaurants';
 
 export function OrderReview() {
   const items = useCartStore((s) => s.items);

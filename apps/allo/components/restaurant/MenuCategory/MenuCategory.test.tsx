@@ -3,7 +3,9 @@ import { MenuCategory } from './MenuCategory';
 
 jest.mock('next/image', () => ({
   __esModule: true,
-  default: ({ src, alt, className }: any) => <img src={src} alt={alt} className={className} />,
+  default: ({ src, alt, className }: any) => (
+    <img src={src} alt={alt} className={className} />
+  ),
 }));
 
 const mockItems = [
@@ -35,13 +37,17 @@ const mockItems = [
 
 describe('<MenuCategory />', () => {
   it('renders the category name as a heading', () => {
-    render(<MenuCategory name="Mains" items={mockItems} onItemClick={jest.fn()} />);
+    render(
+      <MenuCategory name="Mains" items={mockItems} onItemClick={jest.fn()} />
+    );
 
     expect(screen.getByRole('heading', { name: 'Mains' })).toBeInTheDocument();
   });
 
   it('renders all menu items', () => {
-    render(<MenuCategory name="Mains" items={mockItems} onItemClick={jest.fn()} />);
+    render(
+      <MenuCategory name="Mains" items={mockItems} onItemClick={jest.fn()} />
+    );
 
     expect(screen.getByText('Pasta Carbonara')).toBeInTheDocument();
     expect(screen.getByText('Margherita Pizza')).toBeInTheDocument();
@@ -57,7 +63,9 @@ describe('<MenuCategory />', () => {
 
   it('calls onItemClick with the correct item when a menu item is clicked', () => {
     const onItemClick = jest.fn();
-    render(<MenuCategory name="Mains" items={mockItems} onItemClick={onItemClick} />);
+    render(
+      <MenuCategory name="Mains" items={mockItems} onItemClick={onItemClick} />
+    );
 
     fireEvent.click(screen.getByText('Pasta Carbonara'));
 

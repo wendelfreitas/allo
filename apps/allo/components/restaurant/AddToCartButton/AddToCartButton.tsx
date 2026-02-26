@@ -1,9 +1,9 @@
-"use client";
+'use client';
 
-import { Button } from "@allo/ui";
-import { Plus } from "lucide-react";
-import { PriceDisplay } from "../../shared/PriceDisplay/PriceDisplay";
-import type { MenuItem } from "../../../app/api/_data/types";
+import { Button } from '@allo/ui';
+import { Plus } from 'lucide-react';
+import { PriceDisplay } from '../../shared/PriceDisplay/PriceDisplay';
+import type { MenuItem } from '../../../app/api/_data/types';
 
 interface AddToCartButtonProps {
   item: MenuItem;

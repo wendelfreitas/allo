@@ -1,6 +1,6 @@
-"use client";
+'use client';
 
-import { Input, Label } from "@allo/ui";
+import { Input, Label } from '@allo/ui';
 
 interface DeliveryFormProps {
   address: string;

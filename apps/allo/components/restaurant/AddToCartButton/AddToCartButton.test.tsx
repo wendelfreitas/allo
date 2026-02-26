@@ -22,7 +22,9 @@ describe('<AddToCartButton />', () => {
   });
 
   it('renders a plus icon via an svg element', () => {
-    const { container } = render(<AddToCartButton item={mockItem} onClick={jest.fn()} />);
+    const { container } = render(
+      <AddToCartButton item={mockItem} onClick={jest.fn()} />
+    );
 
     const svg = container.querySelector('svg');
     expect(svg).toBeInTheDocument();

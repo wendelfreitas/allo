@@ -1,4 +1,4 @@
-"use client";
+'use client';
 
 import {
   Dialog,
@@ -8,12 +8,12 @@ import {
   DialogDescription,
   Badge,
   Button,
-} from "@allo/ui";
-import Image from "next/image";
-import { PriceDisplay } from "../../shared/PriceDisplay/PriceDisplay";
-import { QuantitySelector } from "../../shared/QuantitySelector/QuantitySelector";
-import { useState } from "react";
-import type { MenuItem } from "../../../app/api/_data/types";
+} from '@allo/ui';
+import Image from 'next/image';
+import { PriceDisplay } from '../../shared/PriceDisplay/PriceDisplay';
+import { QuantitySelector } from '../../shared/QuantitySelector/QuantitySelector';
+import { useState } from 'react';
+import type { MenuItem } from '../../../app/api/_data/types';
 
 interface MenuItemDialogProps {
   item: MenuItem | null;

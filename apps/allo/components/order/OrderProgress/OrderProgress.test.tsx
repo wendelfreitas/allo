@@ -3,7 +3,9 @@ import { OrderProgress } from './OrderProgress';
 
 jest.mock('framer-motion', () => ({
   motion: {
-    div: ({ children, className }: any) => <div className={className}>{children}</div>,
+    div: ({ children, className }: any) => (
+      <div className={className}>{children}</div>
+    ),
   },
 }));
 
@@ -41,7 +43,13 @@ describe('<OrderProgress />', () => {
   it('renders all five step labels simultaneously', () => {
     render(<OrderProgress status="preparing" />);
 
-    const labels = ['Confirmed', 'Preparing', 'Ready', 'On the way', 'Delivered'];
+    const labels = [
+      'Confirmed',
+      'Preparing',
+      'Ready',
+      'On the way',
+      'Delivered',
+    ];
     labels.forEach((label) => {
       expect(screen.getByText(label)).toBeInTheDocument();
     });

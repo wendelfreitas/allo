@@ -1,9 +1,9 @@
-import { NextResponse } from "next/server";
+import { NextResponse } from 'next/server';
 import {
   restaurants,
   menuItems,
   getMenuCategories,
-} from "../../_data/restaurants";
+} from '../../_data/restaurants';
 
 export async function GET(
   _request: Request,
@@ -13,7 +13,10 @@ export async function GET(
   const restaurant = restaurants.find((r) => r.slug === slug);
 
   if (!restaurant) {
-    return NextResponse.json({ error: "Restaurant not found" }, { status: 404 });
+    return NextResponse.json(
+      { error: 'Restaurant not found' },
+      { status: 404 }
+    );
   }
 
   const items = menuItems.filter((item) => item.restaurantId === restaurant.id);

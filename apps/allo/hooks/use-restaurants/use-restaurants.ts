@@ -1,9 +1,9 @@
-"use client";
+'use client';
 
-import { useQuery } from "@tanstack/react-query";
+import { useQuery } from '@tanstack/react-query';
 import { api } from '../../lib/api';
 import { queryKeys } from '../keys';
-import type { Restaurant, PaginatedResponse } from "../../app/api/_data/types";
+import type { Restaurant, PaginatedResponse } from '../../app/api/_data/types';
 
 interface UseRestaurantsParams {
   q?: string;

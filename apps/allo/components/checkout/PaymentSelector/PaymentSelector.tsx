@@ -1,7 +1,7 @@
-"use client";
+'use client';
 
-import { RadioGroup, RadioGroupItem, Label } from "@allo/ui";
-import { CreditCard, Banknote, Smartphone } from "lucide-react";
+import { RadioGroup, RadioGroupItem, Label } from '@allo/ui';
+import { CreditCard, Banknote, Smartphone } from 'lucide-react';
 
 interface PaymentSelectorProps {
   value: string;
@@ -9,9 +9,9 @@ interface PaymentSelectorProps {
 }
 
 const paymentMethods = [
-  { id: "card", label: "Credit Card", icon: CreditCard },
-  { id: "cash", label: "Cash on Delivery", icon: Banknote },
-  { id: "pix", label: "PIX", icon: Smartphone },
+  { id: 'card', label: 'Credit Card', icon: CreditCard },
+  { id: 'cash', label: 'Cash on Delivery', icon: Banknote },
+  { id: 'pix', label: 'PIX', icon: Smartphone },
 ];
 
 export function PaymentSelector({ value, onChange }: PaymentSelectorProps) {

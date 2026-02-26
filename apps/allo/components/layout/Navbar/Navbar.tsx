@@ -1,11 +1,11 @@
-"use client";
+'use client';
 
-import { Button } from "@allo/ui";
-import { ShoppingBag, Menu, X, Search } from "lucide-react";
-import Link from "next/link";
-import { useState } from "react";
-import { useCartStore } from "../../../store/cart";
-import { MobileNav } from "../MobileNav/MobileNav";
+import { Button } from '@allo/ui';
+import { ShoppingBag, Menu, X, Search } from 'lucide-react';
+import Link from 'next/link';
+import { useState } from 'react';
+import { useCartStore } from '../../../store/cart';
+import { MobileNav } from '../MobileNav/MobileNav';
 
 export function Navbar() {
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -20,7 +20,7 @@ export function Navbar() {
             href="/"
             className="text-xl font-bold tracking-tight text-foreground"
           >
-            all<span className="text-primary">O</span>{" "}
+            all<span className="text-primary">O</span>{' '}
             <span className="text-sm font-normal text-muted-foreground">
               eats
             </span>
@@ -52,7 +52,7 @@ export function Navbar() {
             <ShoppingBag size={18} />
             {itemCount > 0 && (
               <span className="absolute -right-1 -top-1 flex h-5 w-5 items-center justify-center rounded-full bg-primary text-[10px] font-bold text-primary-foreground">
-                {itemCount > 99 ? "99+" : itemCount}
+                {itemCount > 99 ? '99+' : itemCount}
               </span>
             )}
           </Button>

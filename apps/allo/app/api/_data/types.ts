@@ -56,11 +56,11 @@ export interface CartItem {
 }
 
 export type OrderStatus =
-  | "confirmed"
-  | "preparing"
-  | "ready"
-  | "out_for_delivery"
-  | "delivered";
+  | 'confirmed'
+  | 'preparing'
+  | 'ready'
+  | 'out_for_delivery'
+  | 'delivered';
 
 export interface OrderStatusHistory {
   status: OrderStatus;

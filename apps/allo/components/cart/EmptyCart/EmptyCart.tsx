@@ -1,6 +1,6 @@
-import { ShoppingBag } from "lucide-react";
-import { Button } from "@allo/ui";
-import Link from "next/link";
+import { ShoppingBag } from 'lucide-react';
+import { Button } from '@allo/ui';
+import Link from 'next/link';
 
 export function EmptyCart() {
   return (

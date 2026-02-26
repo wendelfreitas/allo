@@ -3,7 +3,9 @@ import { RestaurantHeader } from './RestaurantHeader';
 
 jest.mock('next/image', () => ({
   __esModule: true,
-  default: ({ src, alt, className }: any) => <img src={src} alt={alt} className={className} />,
+  default: ({ src, alt, className }: any) => (
+    <img src={src} alt={alt} className={className} />
+  ),
 }));
 
 const mockRestaurant = {
@@ -44,7 +46,9 @@ describe('<RestaurantHeader />', () => {
   it('renders the restaurant name as a heading', () => {
     render(<RestaurantHeader restaurant={mockRestaurant} />);
 
-    expect(screen.getByRole('heading', { name: 'Test Restaurant' })).toBeInTheDocument();
+    expect(
+      screen.getByRole('heading', { name: 'Test Restaurant' })
+    ).toBeInTheDocument();
   });
 
   it('renders the restaurant description', () => {

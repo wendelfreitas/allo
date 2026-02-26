@@ -1,10 +1,10 @@
-"use client";
+'use client';
 
-import Link from "next/link";
+import Link from 'next/link';
 import { useCategories } from '../../../hooks/use-categories/use-categories';
-import { Skeleton } from "@allo/ui";
-import { AnimatedSection } from "../../shared/AnimatedSection/AnimatedSection";
-import { SectionLabel } from "../../shared/SectionLabel/SectionLabel";
+import { Skeleton } from '@allo/ui';
+import { AnimatedSection } from '../../shared/AnimatedSection/AnimatedSection';
+import { SectionLabel } from '../../shared/SectionLabel/SectionLabel';
 
 export function CategoryCarousel() {
   const { data: categories, isLoading } = useCategories();
@@ -22,10 +22,7 @@ export function CategoryCarousel() {
         <div className="mt-8 flex gap-4 overflow-x-auto pb-4 scrollbar-hide">
           {isLoading
             ? Array.from({ length: 12 }).map((_, i) => (
-                <Skeleton
-                  key={i}
-                  className="h-24 w-24 shrink-0 rounded-2xl"
-                />
+                <Skeleton key={i} className="h-24 w-24 shrink-0 rounded-2xl" />
               ))
             : categories?.map((category) => (
                 <Link

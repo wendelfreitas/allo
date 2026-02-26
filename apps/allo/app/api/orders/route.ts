@@ -1,14 +1,21 @@
-import { NextRequest, NextResponse } from "next/server";
-import { createOrder } from "../_data/orders";
+import { NextRequest, NextResponse } from 'next/server';
+import { createOrder } from '../_data/orders';
 
 export async function POST(request: NextRequest) {
   const body = await request.json();
 
-  const { items, restaurantId, restaurantName, deliveryAddress, paymentMethod, deliveryFee } = body;
+  const {
+    items,
+    restaurantId,
+    restaurantName,
+    deliveryAddress,
+    paymentMethod,
+    deliveryFee,
+  } = body;
 
   if (!items?.length || !restaurantId || !deliveryAddress || !paymentMethod) {
     return NextResponse.json(
-      { error: "Missing required fields" },
+      { error: 'Missing required fields' },
       { status: 400 }
     );
   }

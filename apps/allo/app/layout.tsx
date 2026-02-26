@@ -1,24 +1,24 @@
-import { ThemeProvider } from "@allo/ui";
-import type { Metadata } from "next";
-import { Inter, Playfair_Display } from "next/font/google";
-import { Providers } from "../lib/providers";
-import "./globals.css";
+import { ThemeProvider } from '@allo/ui';
+import type { Metadata } from 'next';
+import { Inter, Playfair_Display } from 'next/font/google';
+import { Providers } from '../lib/providers';
+import './globals.css';
 
 const inter = Inter({
-  subsets: ["latin"],
-  variable: "--font-inter",
+  subsets: ['latin'],
+  variable: '--font-inter',
 });
 
 const playfair = Playfair_Display({
-  subsets: ["latin"],
-  variable: "--font-playfair",
-  style: ["normal", "italic"],
+  subsets: ['latin'],
+  variable: '--font-playfair',
+  style: ['normal', 'italic'],
 });
 
 export const metadata: Metadata = {
-  title: "allO Eats — Premium Food Delivery",
+  title: 'allO Eats — Premium Food Delivery',
   description:
-    "Discover the finest restaurants and get premium food delivered to your door. Fast, reliable, delicious.",
+    'Discover the finest restaurants and get premium food delivered to your door. Fast, reliable, delicious.',
 };
 
 export default function RootLayout({
@@ -31,7 +31,7 @@ export default function RootLayout({
       <html lang="en" className="dark">
         <body
           className={`${inter.variable} ${playfair.variable} font-sans antialiased`}
-          style={{ fontFamily: "var(--font-inter), system-ui, sans-serif" }}
+          style={{ fontFamily: 'var(--font-inter), system-ui, sans-serif' }}
         >
           <Providers>{children}</Providers>
         </body>

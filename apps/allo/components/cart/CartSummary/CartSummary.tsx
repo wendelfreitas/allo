@@ -1,8 +1,8 @@
-"use client";
+'use client';
 
-import { useCartStore } from "../../../store/cart";
-import { PriceDisplay } from "../../shared/PriceDisplay/PriceDisplay";
-import { restaurants } from "../../../app/api/_data/restaurants";
+import { useCartStore } from '../../../store/cart';
+import { PriceDisplay } from '../../shared/PriceDisplay/PriceDisplay';
+import { restaurants } from '../../../app/api/_data/restaurants';
 
 export function CartSummary() {
   const items = useCartStore((s) => s.items);

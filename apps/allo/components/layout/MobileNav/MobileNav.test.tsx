@@ -12,7 +12,9 @@ jest.mock('next/link', () => ({
 
 jest.mock('framer-motion', () => ({
   motion: {
-    div: ({ children, className }: any) => <div className={className}>{children}</div>,
+    div: ({ children, className }: any) => (
+      <div className={className}>{children}</div>
+    ),
   },
   AnimatePresence: ({ children }: any) => <>{children}</>,
 }));

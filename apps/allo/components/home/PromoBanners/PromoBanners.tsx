@@ -1,10 +1,10 @@
-"use client";
+'use client';
 
 import { usePromotions } from '../../../hooks/use-promotions/use-promotions';
-import { Badge, Button, Skeleton } from "@allo/ui";
-import { AnimatedSection } from "../../shared/AnimatedSection/AnimatedSection";
-import { SectionLabel } from "../../shared/SectionLabel/SectionLabel";
-import Image from "next/image";
+import { Badge, Button, Skeleton } from '@allo/ui';
+import { AnimatedSection } from '../../shared/AnimatedSection/AnimatedSection';
+import { SectionLabel } from '../../shared/SectionLabel/SectionLabel';
+import Image from 'next/image';
 
 export function PromoBanners() {
   const { data: promotions, isLoading } = usePromotions();

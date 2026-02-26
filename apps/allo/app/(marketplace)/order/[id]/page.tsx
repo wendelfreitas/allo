@@ -1,13 +1,13 @@
-"use client";
+'use client';
 
-import { use } from "react";
-import { Card, Skeleton, Button } from "@allo/ui";
-import { ArrowLeft } from "lucide-react";
-import Link from "next/link";
+import { use } from 'react';
+import { Card, Skeleton, Button } from '@allo/ui';
+import { ArrowLeft } from 'lucide-react';
+import Link from 'next/link';
 import { useOrder } from '../../../../hooks/use-order/use-order';
-import { OrderProgress } from "../../../../components/order/OrderProgress/OrderProgress";
-import { OrderDetails } from "../../../../components/order/OrderDetails/OrderDetails";
-import { motion } from "framer-motion";
+import { OrderProgress } from '../../../../components/order/OrderProgress/OrderProgress';
+import { OrderDetails } from '../../../../components/order/OrderDetails/OrderDetails';
+import { motion } from 'framer-motion';
 
 export default function OrderTrackingPage({
   params,
@@ -42,11 +42,13 @@ export default function OrderTrackingPage({
   }
 
   const statusMessages: Record<string, string> = {
-    confirmed: "Your order has been confirmed! The restaurant will start preparing it soon.",
-    preparing: "The kitchen is working on your order. Sit tight!",
-    ready: "Your order is ready and waiting for a delivery partner.",
-    out_for_delivery: "Your order is on its way! The delivery partner is heading to you.",
-    delivered: "Your order has been delivered. Enjoy your meal!",
+    confirmed:
+      'Your order has been confirmed! The restaurant will start preparing it soon.',
+    preparing: 'The kitchen is working on your order. Sit tight!',
+    ready: 'Your order is ready and waiting for a delivery partner.',
+    out_for_delivery:
+      'Your order is on its way! The delivery partner is heading to you.',
+    delivered: 'Your order has been delivered. Enjoy your meal!',
   };
 
   return (
@@ -74,12 +76,12 @@ export default function OrderTrackingPage({
           <p className="mt-6 text-center text-sm text-muted-foreground">
             {statusMessages[order.status]}
           </p>
-          {order.status !== "delivered" && (
+          {order.status !== 'delivered' && (
             <p className="mt-2 text-center text-xs text-muted-foreground">
-              Estimated delivery:{" "}
+              Estimated delivery:{' '}
               {new Date(order.estimatedDelivery).toLocaleTimeString([], {
-                hour: "2-digit",
-                minute: "2-digit",
+                hour: '2-digit',
+                minute: '2-digit',
               })}
             </p>
           )}

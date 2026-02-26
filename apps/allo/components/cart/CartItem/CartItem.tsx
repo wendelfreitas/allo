@@ -1,11 +1,11 @@
-"use client";
+'use client';
 
-import { X } from "lucide-react";
-import { Button } from "@allo/ui";
-import { QuantitySelector } from "../../shared/QuantitySelector/QuantitySelector";
-import { PriceDisplay } from "../../shared/PriceDisplay/PriceDisplay";
-import { useCartStore } from "../../../store/cart";
-import type { CartItem as CartItemType } from "../../../app/api/_data/types";
+import { X } from 'lucide-react';
+import { Button } from '@allo/ui';
+import { QuantitySelector } from '../../shared/QuantitySelector/QuantitySelector';
+import { PriceDisplay } from '../../shared/PriceDisplay/PriceDisplay';
+import { useCartStore } from '../../../store/cart';
+import type { CartItem as CartItemType } from '../../../app/api/_data/types';
 
 interface CartItemProps {
   item: CartItemType;

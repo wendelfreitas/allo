@@ -8,12 +8,16 @@ jest.mock('next/link', () => ({
 
 jest.mock('next/image', () => ({
   __esModule: true,
-  default: ({ src, alt, className }: any) => <img src={src} alt={alt} className={className} />,
+  default: ({ src, alt, className }: any) => (
+    <img src={src} alt={alt} className={className} />
+  ),
 }));
 
 jest.mock('framer-motion', () => ({
   motion: {
-    div: ({ children, className }: any) => <div className={className}>{children}</div>,
+    div: ({ children, className }: any) => (
+      <div className={className}>{children}</div>
+    ),
   },
 }));
 

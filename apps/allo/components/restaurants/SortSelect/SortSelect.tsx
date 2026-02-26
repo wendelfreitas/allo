@@ -1,4 +1,4 @@
-"use client";
+'use client';
 
 import {
   Select,
@@ -6,7 +6,7 @@ import {
   SelectItem,
   SelectTrigger,
   SelectValue,
-} from "@allo/ui";
+} from '@allo/ui';
 
 interface SortSelectProps {
   value: string;
@@ -14,10 +14,10 @@ interface SortSelectProps {
 }
 
 const sortOptions = [
-  { value: "rating", label: "Top Rated" },
-  { value: "delivery_time", label: "Fastest Delivery" },
-  { value: "delivery_fee", label: "Lowest Fee" },
-  { value: "name", label: "Name A-Z" },
+  { value: 'rating', label: 'Top Rated' },
+  { value: 'delivery_time', label: 'Fastest Delivery' },
+  { value: 'delivery_fee', label: 'Lowest Fee' },
+  { value: 'name', label: 'Name A-Z' },
 ];
 
 export function SortSelect({ value, onChange }: SortSelectProps) {

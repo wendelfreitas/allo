@@ -26,7 +26,9 @@ describe('<OrderDetails />', () => {
   it('renders the Order Details heading', () => {
     render(<OrderDetails order={mockOrder} />);
 
-    expect(screen.getByRole('heading', { name: 'Order Details' })).toBeInTheDocument();
+    expect(
+      screen.getByRole('heading', { name: 'Order Details' })
+    ).toBeInTheDocument();
   });
 
   it('renders the restaurant name', () => {

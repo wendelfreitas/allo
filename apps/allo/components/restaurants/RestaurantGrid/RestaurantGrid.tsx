@@ -1,9 +1,9 @@
-"use client";
+'use client';
 
-import { Skeleton } from "@allo/ui";
-import { RestaurantCard } from "../RestaurantCard/RestaurantCard";
-import { AnimatedSection } from "../../shared/AnimatedSection/AnimatedSection";
-import type { Restaurant } from "../../../app/api/_data/types";
+import { Skeleton } from '@allo/ui';
+import { RestaurantCard } from '../RestaurantCard/RestaurantCard';
+import { AnimatedSection } from '../../shared/AnimatedSection/AnimatedSection';
+import type { Restaurant } from '../../../app/api/_data/types';
 
 interface RestaurantGridProps {
   restaurants?: Restaurant[];

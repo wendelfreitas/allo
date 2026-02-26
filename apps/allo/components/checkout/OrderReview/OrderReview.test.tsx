@@ -7,9 +7,7 @@ jest.mock('../../../store/cart', () => ({
 }));
 
 jest.mock('../../../app/api/_data/restaurants', () => ({
-  restaurants: [
-    { id: 'r1', deliveryFee: 499 },
-  ],
+  restaurants: [{ id: 'r1', deliveryFee: 499 }],
 }));
 
 const mockUseCartStore = useCartStore as unknown as jest.Mock;
@@ -66,7 +64,9 @@ describe('<OrderReview />', () => {
   it('renders the Order Review heading', () => {
     render(<OrderReview />);
 
-    expect(screen.getByRole('heading', { name: 'Order Review' })).toBeInTheDocument();
+    expect(
+      screen.getByRole('heading', { name: 'Order Review' })
+    ).toBeInTheDocument();
   });
 
   it('renders the restaurant name', () => {

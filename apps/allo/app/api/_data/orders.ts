@@ -1,11 +1,11 @@
-import { Order, OrderStatus, OrderStatusHistory } from "./types";
+import { Order, OrderStatus, OrderStatusHistory } from './types';
 
 const ORDER_STATUSES: OrderStatus[] = [
-  "confirmed",
-  "preparing",
-  "ready",
-  "out_for_delivery",
-  "delivered",
+  'confirmed',
+  'preparing',
+  'ready',
+  'out_for_delivery',
+  'delivered',
 ];
 
 const STATUS_DURATIONS: Record<OrderStatus, number> = {
@@ -41,8 +41,8 @@ export function createOrder(data: {
     subtotal,
     deliveryFee: data.deliveryFee,
     total: subtotal + data.deliveryFee,
-    status: "confirmed",
-    statusHistory: [{ status: "confirmed", timestamp: now }],
+    status: 'confirmed',
+    statusHistory: [{ status: 'confirmed', timestamp: now }],
     deliveryAddress: data.deliveryAddress,
     paymentMethod: data.paymentMethod,
     estimatedDelivery: new Date(Date.now() + 35 * 60 * 1000).toISOString(),
@@ -61,9 +61,9 @@ export function getOrder(id: string): Order | undefined {
   const elapsed = Date.now() - createdAt;
 
   let cumulativeTime = 0;
-  let currentStatus: OrderStatus = "confirmed";
+  let currentStatus: OrderStatus = 'confirmed';
   const statusHistory: OrderStatusHistory[] = [
-    { status: "confirmed", timestamp: order.createdAt },
+    { status: 'confirmed', timestamp: order.createdAt },
   ];
 
   for (let i = 0; i < ORDER_STATUSES.length - 1; i++) {

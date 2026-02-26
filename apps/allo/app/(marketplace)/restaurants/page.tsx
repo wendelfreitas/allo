@@ -1,28 +1,28 @@
-"use client";
+'use client';
 
-import { Suspense, useState } from "react";
-import { useSearchParams } from "next/navigation";
-import { Input, Skeleton } from "@allo/ui";
-import { Search } from "lucide-react";
+import { Suspense, useState } from 'react';
+import { useSearchParams } from 'next/navigation';
+import { Input, Skeleton } from '@allo/ui';
+import { Search } from 'lucide-react';
 import { useRestaurants } from '../../../hooks/use-restaurants/use-restaurants';
-import { RestaurantFilters } from "../../../components/restaurants/RestaurantFilters/RestaurantFilters";
-import { SortSelect } from "../../../components/restaurants/SortSelect/SortSelect";
-import { RestaurantGrid } from "../../../components/restaurants/RestaurantGrid/RestaurantGrid";
+import { RestaurantFilters } from '../../../components/restaurants/RestaurantFilters/RestaurantFilters';
+import { SortSelect } from '../../../components/restaurants/SortSelect/SortSelect';
+import { RestaurantGrid } from '../../../components/restaurants/RestaurantGrid/RestaurantGrid';
 
 function RestaurantsContent() {
   const searchParams = useSearchParams();
-  const initialCuisine = searchParams.get("cuisine");
-  const initialQuery = searchParams.get("q") || "";
+  const initialCuisine = searchParams.get('cuisine');
+  const initialQuery = searchParams.get('q') || '';
 
   const [query, setQuery] = useState(initialQuery);
   const [cuisine, setCuisine] = useState<string | null>(initialCuisine);
-  const [sort, setSort] = useState("rating");
+  const [sort, setSort] = useState('rating');
 
   const { data, isLoading } = useRestaurants({
     q: query || undefined,
     cuisine: cuisine || undefined,
     sort,
-    pageSize: "50",
+    pageSize: '50',
   });
 
   return (

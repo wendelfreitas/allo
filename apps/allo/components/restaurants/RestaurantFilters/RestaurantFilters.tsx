@@ -1,6 +1,6 @@
-"use client";
+'use client';
 
-import { Badge, Skeleton } from "@allo/ui";
+import { Badge, Skeleton } from '@allo/ui';
 import { useCategories } from '../../../hooks/use-categories/use-categories';
 
 interface RestaurantFiltersProps {
@@ -17,7 +17,7 @@ export function RestaurantFilters({
   return (
     <div className="flex flex-wrap gap-2">
       <Badge
-        variant={selectedCuisine === null ? "default" : "outline"}
+        variant={selectedCuisine === null ? 'default' : 'outline'}
         className="cursor-pointer transition-colors"
         onClick={() => onCuisineChange(null)}
       >
@@ -32,7 +32,7 @@ export function RestaurantFilters({
             <Badge
               key={category.id}
               variant={
-                selectedCuisine === category.slug ? "default" : "outline"
+                selectedCuisine === category.slug ? 'default' : 'outline'
               }
               className="cursor-pointer transition-colors"
               onClick={() =>

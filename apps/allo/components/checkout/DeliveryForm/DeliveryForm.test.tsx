@@ -12,7 +12,9 @@ describe('<DeliveryForm />', () => {
       />
     );
 
-    expect(screen.getByRole('heading', { name: 'Delivery Address' })).toBeInTheDocument();
+    expect(
+      screen.getByRole('heading', { name: 'Delivery Address' })
+    ).toBeInTheDocument();
   });
 
   it('renders the Street Address label and input', () => {
@@ -38,7 +40,9 @@ describe('<DeliveryForm />', () => {
       />
     );
 
-    expect(screen.getByLabelText('Delivery Instructions (optional)')).toBeInTheDocument();
+    expect(
+      screen.getByLabelText('Delivery Instructions (optional)')
+    ).toBeInTheDocument();
   });
 
   it('displays the current address value', () => {
@@ -64,7 +68,9 @@ describe('<DeliveryForm />', () => {
       />
     );
 
-    expect(screen.getByLabelText('Delivery Instructions (optional)')).toHaveValue('Leave at door');
+    expect(
+      screen.getByLabelText('Delivery Instructions (optional)')
+    ).toHaveValue('Leave at door');
   });
 
   it('calls onAddressChange when typing in the address input', () => {
@@ -96,9 +102,12 @@ describe('<DeliveryForm />', () => {
       />
     );
 
-    fireEvent.change(screen.getByLabelText('Delivery Instructions (optional)'), {
-      target: { value: 'Ring doorbell' },
-    });
+    fireEvent.change(
+      screen.getByLabelText('Delivery Instructions (optional)'),
+      {
+        target: { value: 'Ring doorbell' },
+      }
+    );
 
     expect(onInstructionsChange).toHaveBeenCalledWith('Ring doorbell');
   });

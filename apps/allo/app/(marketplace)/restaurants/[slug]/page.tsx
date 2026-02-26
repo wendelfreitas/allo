@@ -1,13 +1,13 @@
-"use client";
+'use client';
 
-import { use, useState } from "react";
-import { Tabs, TabsContent, TabsList, TabsTrigger, Skeleton } from "@allo/ui";
+import { use, useState } from 'react';
+import { Tabs, TabsContent, TabsList, TabsTrigger, Skeleton } from '@allo/ui';
 import { useRestaurant } from '../../../../hooks/use-restaurant/use-restaurant';
-import { RestaurantHeader } from "../../../../components/restaurant/RestaurantHeader/RestaurantHeader";
-import { MenuCategory } from "../../../../components/restaurant/MenuCategory/MenuCategory";
-import { MenuItemDialog } from "../../../../components/restaurant/MenuItemDialog/MenuItemDialog";
-import { useCartStore } from "../../../../store/cart";
-import type { MenuItem } from "../../../../app/api/_data/types";
+import { RestaurantHeader } from '../../../../components/restaurant/RestaurantHeader/RestaurantHeader';
+import { MenuCategory } from '../../../../components/restaurant/MenuCategory/MenuCategory';
+import { MenuItemDialog } from '../../../../components/restaurant/MenuItemDialog/MenuItemDialog';
+import { useCartStore } from '../../../../store/cart';
+import type { MenuItem } from '../../../../app/api/_data/types';
 
 export default function RestaurantPage({
   params,
@@ -68,7 +68,7 @@ export default function RestaurantPage({
       <RestaurantHeader restaurant={restaurant} />
 
       <div className="mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8">
-        <Tabs defaultValue={firstCategory?.id || "all"}>
+        <Tabs defaultValue={firstCategory?.id || 'all'}>
           <div className="mb-6 -mx-4 px-4 overflow-x-auto scrollbar-hide sm:mx-0 sm:px-0">
             <TabsList className="inline-flex h-auto w-max gap-2 bg-transparent p-0">
               {categories.map((category) => (

@@ -1,14 +1,14 @@
-"use client";
+'use client';
 
-import { Button, Input } from "@allo/ui";
-import { Search, ArrowRight } from "lucide-react";
-import Link from "next/link";
-import { useState } from "react";
-import { useRouter } from "next/navigation";
-import { motion } from "framer-motion";
+import { Button, Input } from '@allo/ui';
+import { Search, ArrowRight } from 'lucide-react';
+import Link from 'next/link';
+import { useState } from 'react';
+import { useRouter } from 'next/navigation';
+import { motion } from 'framer-motion';
 
 export function HeroSection() {
-  const [query, setQuery] = useState("");
+  const [query, setQuery] = useState('');
   const router = useRouter();
 
   const handleSearch = (e: React.FormEvent) => {
@@ -44,7 +44,7 @@ export function HeroSection() {
             transition={{ duration: 0.6, delay: 0.1 }}
             className="mt-4 text-4xl font-bold tracking-tight sm:text-5xl lg:text-6xl"
           >
-            Discover the{" "}
+            Discover the{' '}
             <span className="font-playfair italic text-primary">finest</span>
             <br />
             food near you

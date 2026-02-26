@@ -29,7 +29,9 @@ describe('<AnimatedSection />', () => {
       </AnimatedSection>
     );
 
-    expect(screen.getByTestId('animated-section')).toHaveClass('my-custom-class');
+    expect(screen.getByTestId('animated-section')).toHaveClass(
+      'my-custom-class'
+    );
   });
 
   it('renders multiple children', () => {

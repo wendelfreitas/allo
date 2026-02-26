@@ -1,16 +1,16 @@
-"use client";
+'use client';
 
-import { useState } from "react";
-import { useRouter } from "next/navigation";
-import { Button, Card, Separator } from "@allo/ui";
-import { ArrowLeft, Loader2 } from "lucide-react";
-import Link from "next/link";
-import { useCartStore } from "../../../store/cart";
+import { useState } from 'react';
+import { useRouter } from 'next/navigation';
+import { Button, Card, Separator } from '@allo/ui';
+import { ArrowLeft, Loader2 } from 'lucide-react';
+import Link from 'next/link';
+import { useCartStore } from '../../../store/cart';
 import { useCreateOrder } from '../../../hooks/use-create-order/use-create-order';
-import { DeliveryForm } from "../../../components/checkout/DeliveryForm/DeliveryForm";
-import { PaymentSelector } from "../../../components/checkout/PaymentSelector/PaymentSelector";
-import { OrderReview } from "../../../components/checkout/OrderReview/OrderReview";
-import { restaurants } from "../../../app/api/_data/restaurants";
+import { DeliveryForm } from '../../../components/checkout/DeliveryForm/DeliveryForm';
+import { PaymentSelector } from '../../../components/checkout/PaymentSelector/PaymentSelector';
+import { OrderReview } from '../../../components/checkout/OrderReview/OrderReview';
+import { restaurants } from '../../../app/api/_data/restaurants';
 
 export default function CheckoutPage() {
   const router = useRouter();
@@ -20,9 +20,9 @@ export default function CheckoutPage() {
   const clearCart = useCartStore((s) => s.clearCart);
   const createOrder = useCreateOrder();
 
-  const [address, setAddress] = useState("");
-  const [instructions, setInstructions] = useState("");
-  const [paymentMethod, setPaymentMethod] = useState("card");
+  const [address, setAddress] = useState('');
+  const [instructions, setInstructions] = useState('');
+  const [paymentMethod, setPaymentMethod] = useState('card');
   const [isSubmitted, setIsSubmitted] = useState(false);
 
   const restaurant = restaurants.find((r) => r.id === restaurantId);
@@ -41,7 +41,7 @@ export default function CheckoutPage() {
       })),
       restaurantId,
       restaurantName,
-      deliveryAddress: `${address}${instructions ? ` (${instructions})` : ""}`,
+      deliveryAddress: `${address}${instructions ? ` (${instructions})` : ''}`,
       paymentMethod,
       deliveryFee,
     });
@@ -112,7 +112,7 @@ export default function CheckoutPage() {
                   Placing order...
                 </>
               ) : (
-                "Place Order"
+                'Place Order'
               )}
             </Button>
           </Card>

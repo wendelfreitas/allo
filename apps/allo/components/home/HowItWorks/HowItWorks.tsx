@@ -1,27 +1,27 @@
-"use client";
+'use client';
 
-import { Search, UtensilsCrossed, Bike } from "lucide-react";
-import { AnimatedSection } from "../../shared/AnimatedSection/AnimatedSection";
-import { SectionLabel } from "../../shared/SectionLabel/SectionLabel";
+import { Search, UtensilsCrossed, Bike } from 'lucide-react';
+import { AnimatedSection } from '../../shared/AnimatedSection/AnimatedSection';
+import { SectionLabel } from '../../shared/SectionLabel/SectionLabel';
 
 const steps = [
   {
     icon: Search,
-    title: "Browse & Choose",
+    title: 'Browse & Choose',
     description:
-      "Explore restaurants near you, filter by cuisine, and find your perfect meal.",
+      'Explore restaurants near you, filter by cuisine, and find your perfect meal.',
   },
   {
     icon: UtensilsCrossed,
-    title: "Order & Pay",
+    title: 'Order & Pay',
     description:
-      "Customize your order, add to cart, and pay securely — all in a few taps.",
+      'Customize your order, add to cart, and pay securely — all in a few taps.',
   },
   {
     icon: Bike,
-    title: "Track & Enjoy",
+    title: 'Track & Enjoy',
     description:
-      "Follow your order in real-time from kitchen to doorstep. Bon appétit!",
+      'Follow your order in real-time from kitchen to doorstep. Bon appétit!',
   },
 ];
 

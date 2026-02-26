@@ -1,9 +1,9 @@
-"use client";
+'use client';
 
-import { Card, Separator } from "@allo/ui";
-import { MapPin, CreditCard, Store } from "lucide-react";
-import { PriceDisplay } from "../../shared/PriceDisplay/PriceDisplay";
-import type { Order } from "../../../app/api/_data/types";
+import { Card, Separator } from '@allo/ui';
+import { MapPin, CreditCard, Store } from 'lucide-react';
+import { PriceDisplay } from '../../shared/PriceDisplay/PriceDisplay';
+import type { Order } from '../../../app/api/_data/types';
 
 interface OrderDetailsProps {
   order: Order;
@@ -33,11 +33,11 @@ export function OrderDetails({ order }: OrderDetailsProps) {
             className="mt-0.5 text-muted-foreground shrink-0"
           />
           <p className="capitalize text-muted-foreground">
-            {order.paymentMethod === "card"
-              ? "Credit Card"
-              : order.paymentMethod === "pix"
-              ? "PIX"
-              : "Cash on Delivery"}
+            {order.paymentMethod === 'card'
+              ? 'Credit Card'
+              : order.paymentMethod === 'pix'
+                ? 'PIX'
+                : 'Cash on Delivery'}
           </p>
         </div>
       </div>

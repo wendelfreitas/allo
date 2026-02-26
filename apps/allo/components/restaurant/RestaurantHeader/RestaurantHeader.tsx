@@ -1,11 +1,11 @@
-"use client";
+'use client';
 
-import Image from "next/image";
-import { Badge } from "@allo/ui";
-import { Clock, Bike, MapPin } from "lucide-react";
-import { StarRating } from "../../shared/StarRating/StarRating";
-import { PriceDisplay } from "../../shared/PriceDisplay/PriceDisplay";
-import type { RestaurantWithMenu } from "../../../app/api/_data/types";
+import Image from 'next/image';
+import { Badge } from '@allo/ui';
+import { Clock, Bike, MapPin } from 'lucide-react';
+import { StarRating } from '../../shared/StarRating/StarRating';
+import { PriceDisplay } from '../../shared/PriceDisplay/PriceDisplay';
+import type { RestaurantWithMenu } from '../../../app/api/_data/types';
 
 interface RestaurantHeaderProps {
   restaurant: RestaurantWithMenu;
@@ -65,8 +65,7 @@ export function RestaurantHeader({ restaurant }: RestaurantHeaderProps) {
             </span>
             <span className="flex items-center gap-1">
               <Bike size={14} />
-              Delivery{" "}
-              <PriceDisplay cents={restaurant.deliveryFee} />
+              Delivery <PriceDisplay cents={restaurant.deliveryFee} />
             </span>
             <span className="flex items-center gap-1">
               <MapPin size={14} />

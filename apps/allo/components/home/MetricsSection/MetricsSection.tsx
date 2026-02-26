@@ -1,12 +1,12 @@
-"use client";
+'use client';
 
-import { AnimatedSection } from "../../shared/AnimatedSection/AnimatedSection";
+import { AnimatedSection } from '../../shared/AnimatedSection/AnimatedSection';
 
 const metrics = [
-  { value: "500+", label: "Restaurants" },
-  { value: "50K+", label: "Happy customers" },
-  { value: "25 min", label: "Avg. delivery" },
-  { value: "4.8", label: "App rating" },
+  { value: '500+', label: 'Restaurants' },
+  { value: '50K+', label: 'Happy customers' },
+  { value: '25 min', label: 'Avg. delivery' },
+  { value: '4.8', label: 'App rating' },
 ];
 
 export function MetricsSection() {

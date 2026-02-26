@@ -1,9 +1,9 @@
-"use client";
+'use client';
 
-import { Card, Badge } from "@allo/ui";
-import Image from "next/image";
-import { PriceDisplay } from "../../shared/PriceDisplay/PriceDisplay";
-import type { MenuItem } from "../../../app/api/_data/types";
+import { Card, Badge } from '@allo/ui';
+import Image from 'next/image';
+import { PriceDisplay } from '../../shared/PriceDisplay/PriceDisplay';
+import type { MenuItem } from '../../../app/api/_data/types';
 
 interface MenuItemCardProps {
   item: MenuItem;

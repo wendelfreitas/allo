@@ -1,7 +1,7 @@
-"use client";
+'use client';
 
-import { Button } from "@allo/ui";
-import { Minus, Plus } from "lucide-react";
+import { Button } from '@allo/ui';
+import { Minus, Plus } from 'lucide-react';
 
 interface QuantitySelectorProps {
   quantity: number;

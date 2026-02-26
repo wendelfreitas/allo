@@ -3,7 +3,9 @@ import { MetricsSection } from './MetricsSection';
 
 jest.mock('framer-motion', () => ({
   motion: {
-    div: ({ children, className }: any) => <div className={className}>{children}</div>,
+    div: ({ children, className }: any) => (
+      <div className={className}>{children}</div>
+    ),
   },
 }));
 

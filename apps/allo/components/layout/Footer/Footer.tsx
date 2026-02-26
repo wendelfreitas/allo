@@ -1,5 +1,5 @@
-import { Separator } from "@allo/ui";
-import Link from "next/link";
+import { Separator } from '@allo/ui';
+import Link from 'next/link';
 
 export function Footer() {
   return (
@@ -8,7 +8,7 @@ export function Footer() {
         <div className="grid grid-cols-2 gap-8 md:grid-cols-4">
           <div className="col-span-2 md:col-span-1">
             <Link href="/" className="text-xl font-bold tracking-tight">
-              all<span className="text-primary">O</span>{" "}
+              all<span className="text-primary">O</span>{' '}
               <span className="text-sm font-normal text-muted-foreground">
                 eats
               </span>

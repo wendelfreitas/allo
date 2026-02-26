@@ -1,4 +1,4 @@
-"use client";
+'use client';
 
 import {
   Sheet,
@@ -8,12 +8,12 @@ import {
   SheetFooter,
   Button,
   Separator,
-} from "@allo/ui";
-import { useCartStore } from "../../../store/cart";
-import { CartItem } from "../../cart/CartItem/CartItem";
-import { CartSummary } from "../../cart/CartSummary/CartSummary";
-import { EmptyCart } from "../../cart/EmptyCart/EmptyCart";
-import Link from "next/link";
+} from '@allo/ui';
+import { useCartStore } from '../../../store/cart';
+import { CartItem } from '../../cart/CartItem/CartItem';
+import { CartSummary } from '../../cart/CartSummary/CartSummary';
+import { EmptyCart } from '../../cart/EmptyCart/EmptyCart';
+import Link from 'next/link';
 
 export function CartDrawer() {
   const isOpen = useCartStore((s) => s.isOpen);

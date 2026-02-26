@@ -3,7 +3,9 @@ import { MenuItemDialog } from './MenuItemDialog';
 
 jest.mock('next/image', () => ({
   __esModule: true,
-  default: ({ src, alt, className }: any) => <img src={src} alt={alt} className={className} />,
+  default: ({ src, alt, className }: any) => (
+    <img src={src} alt={alt} className={className} />
+  ),
 }));
 
 jest.mock('@allo/ui', () => ({
@@ -14,7 +16,9 @@ jest.mock('@allo/ui', () => ({
   DialogDescription: ({ children }: any) => <p>{children}</p>,
   Badge: ({ children }: any) => <span>{children}</span>,
   Button: ({ children, onClick, ...props }: any) => (
-    <button onClick={onClick} {...props}>{children}</button>
+    <button onClick={onClick} {...props}>
+      {children}
+    </button>
   ),
 }));
 

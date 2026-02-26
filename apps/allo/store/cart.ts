@@ -1,8 +1,8 @@
-"use client";
+'use client';
 
-import { create } from "zustand";
-import { persist } from "zustand/middleware";
-import { MenuItem, CartItem } from "../app/api/_data/types";
+import { create } from 'zustand';
+import { persist } from 'zustand/middleware';
+import { MenuItem, CartItem } from '../app/api/_data/types';
 
 interface CartState {
   items: CartItem[];
@@ -10,7 +10,11 @@ interface CartState {
   restaurantName: string | null;
   isOpen: boolean;
 
-  addItem: (menuItem: MenuItem, restaurantId: string, restaurantName: string) => void;
+  addItem: (
+    menuItem: MenuItem,
+    restaurantId: string,
+    restaurantName: string
+  ) => void;
   removeItem: (itemId: string) => void;
   updateQuantity: (itemId: string, quantity: number) => void;
   clearCart: () => void;
@@ -30,7 +34,11 @@ export const useCartStore = create<CartState>()(
       restaurantName: null,
       isOpen: false,
 
-      addItem: (menuItem: MenuItem, restaurantId: string, restaurantName: string) => {
+      addItem: (
+        menuItem: MenuItem,
+        restaurantId: string,
+        restaurantName: string
+      ) => {
         const state = get();
 
         if (state.restaurantId && state.restaurantId !== restaurantId) {
@@ -116,7 +124,7 @@ export const useCartStore = create<CartState>()(
         get().items.reduce((sum, item) => sum + item.totalPrice, 0),
     }),
     {
-      name: "allo-cart",
+      name: 'allo-cart',
       partialize: (state) => ({
         items: state.items,
         restaurantId: state.restaurantId,
