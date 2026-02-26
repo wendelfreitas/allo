@@ -19,10 +19,25 @@ const playfair = Playfair_Display({
   style: ['normal', 'italic'],
 });
 
+const ogImage = 'https://a.storyblok.com/f/310313/3600x1890/9ce1d6f51f/og_image.png';
+
 export const metadata: Metadata = {
   title: 'allO Eats — Premium Food Delivery',
   description:
     'Discover the finest restaurants and get premium food delivered to your door. Fast, reliable, delicious.',
+  openGraph: {
+    title: 'allO Eats — Premium Food Delivery',
+    description:
+      'Discover the finest restaurants and get premium food delivered to your door. Fast, reliable, delicious.',
+    images: [{ url: ogImage, width: 3600, height: 1890 }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'allO Eats — Premium Food Delivery',
+    description:
+      'Discover the finest restaurants and get premium food delivered to your door. Fast, reliable, delicious.',
+    images: [ogImage],
+  },
 };
 
 export function generateStaticParams() {
