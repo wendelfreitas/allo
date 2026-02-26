@@ -1,7 +1,15 @@
 /** @type {import('next').NextConfig} */
 
 const nextConfig = {
-  transpilePackages: ['@allo/ui'],
+  transpilePackages: ["@allo/ui"],
+  images: {
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "images.unsplash.com",
+      },
+    ],
+  },
 };
 
 export default nextConfig;
