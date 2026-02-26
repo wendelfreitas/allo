@@ -16,11 +16,9 @@ export default function CheckoutPage() {
   const t = useTranslations('checkout');
   const tc = useTranslations('common');
   const router = useRouter();
-  const items = useCartStore((s) => s.items);
-  const restaurantId = useCartStore((s) => s.restaurantId);
-  const restaurantName = useCartStore((s) => s.restaurantName);
+  const { items, restaurantId, restaurantName } = useCartStore();
   const clearCart = useCartStore((s) => s.clearCart);
-  const createOrder = useCreateOrder();
+  const { mutateAsync: createOrder, isPending } = useCreateOrder();
 
   const [address, setAddress] = useState('');
   const [instructions, setInstructions] = useState('');
@@ -35,31 +33,35 @@ export default function CheckoutPage() {
   const handleSubmit = async () => {
     if (!canSubmit || !restaurantId || !restaurantName) return;
 
-    const order = await createOrder.mutateAsync({
-      items: items.map((item) => ({
-        name: item.menuItem.name,
-        quantity: item.quantity,
-        price: item.menuItem.price,
-      })),
-      restaurantId,
-      restaurantName,
-      deliveryAddress: `${address}${instructions ? ` (${instructions})` : ''}`,
-      paymentMethod,
-      deliveryFee,
-    });
-
     setIsSubmitted(true);
-    clearCart();
-    router.push(`/order/${order.id}`);
+
+    return createOrder(
+      {
+        items: items.map((item) => ({
+          name: item.menuItem.name,
+          quantity: item.quantity,
+          price: item.menuItem.price,
+        })),
+        restaurantId,
+        restaurantName,
+        deliveryAddress: `${address}${instructions ? ` (${instructions})` : ''}`,
+        paymentMethod,
+        deliveryFee,
+      },
+      {
+        onSuccess: (order) => {
+          clearCart();
+          router.push(`/order/${order.id}`);
+        },
+      }
+    );
   };
 
   if (items.length === 0 && !isSubmitted) {
     return (
       <div className="mx-auto max-w-2xl px-4 py-20 text-center sm:px-6">
         <h1 className="text-2xl font-bold">{t('emptyCart')}</h1>
-        <p className="mt-2 text-muted-foreground">
-          {t('emptyCartHint')}
-        </p>
+        <p className="mt-2 text-muted-foreground">{t('emptyCartHint')}</p>
         <Link href="/restaurants">
           <Button className="mt-6">{tc('browseRestaurants')}</Button>
         </Link>
@@ -106,9 +108,9 @@ export default function CheckoutPage() {
               className="w-full"
               size="lg"
               onClick={handleSubmit}
-              disabled={!canSubmit || createOrder.isPending}
+              disabled={!canSubmit || isPending}
             >
-              {createOrder.isPending ? (
+              {isPending ? (
                 <>
                   <Loader2 size={16} className="mr-2 animate-spin" />
                   {t('placingOrder')}

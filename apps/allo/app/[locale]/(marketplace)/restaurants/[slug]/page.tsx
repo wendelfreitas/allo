@@ -19,10 +19,12 @@ export default function RestaurantPage({
   const { slug } = use(params);
   const { data: restaurant, isLoading } = useRestaurant(slug);
   const [selectedItem, setSelectedItem] = useState<MenuItem | null>(null);
-  const addItem = useCartStore((s) => s.addItem);
-  const openCart = useCartStore((s) => s.openCart);
-  const cartRestaurantId = useCartStore((s) => s.restaurantId);
-  const clearCart = useCartStore((s) => s.clearCart);
+  const {
+    addItem,
+    openCart,
+    clearCart,
+    restaurantId: cartRestaurantId,
+  } = useCartStore();
 
   const handleAddToCart = (item: MenuItem, quantity: number) => {
     if (!restaurant) return;
