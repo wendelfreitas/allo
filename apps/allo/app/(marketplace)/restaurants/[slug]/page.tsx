@@ -25,7 +25,6 @@ export default function RestaurantPage({
   const handleAddToCart = (item: MenuItem, quantity: number) => {
     if (!restaurant) return;
 
-    // If cart has items from a different restaurant, clear it first
     if (cartRestaurantId && cartRestaurantId !== restaurant.id) {
       clearCart();
     }

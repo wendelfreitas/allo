@@ -57,7 +57,6 @@ export function getOrder(id: string): Order | undefined {
   const order = orderStore.get(id);
   if (!order) return undefined;
 
-  // Simulate progress based on elapsed time
   const createdAt = new Date(order.createdAt).getTime();
   const elapsed = Date.now() - createdAt;
 

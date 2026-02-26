@@ -65,7 +65,6 @@ describe('<CartItem />', () => {
     render(<CartItem item={createCartItem()} />);
 
     const buttons = screen.getAllByRole('button');
-    // The plus button in QuantitySelector (second button)
     const plusButton = buttons[1]!;
     fireEvent.click(plusButton);
 
@@ -76,7 +75,6 @@ describe('<CartItem />', () => {
     render(<CartItem item={createCartItem()} />);
 
     const buttons = screen.getAllByRole('button');
-    // The remove button is the last button (after minus, plus)
     const removeButton = buttons[buttons.length - 1]!;
     fireEvent.click(removeButton);
 
@@ -105,7 +103,6 @@ describe('<CartItem />', () => {
     render(<CartItem item={item} />);
 
     expect(screen.getByText('Spaghetti Carbonara')).toBeInTheDocument();
-    // Both unit price and total are $15.99 when quantity is 1
     expect(screen.getAllByText('$15.99').length).toBeGreaterThanOrEqual(1);
   });
 });

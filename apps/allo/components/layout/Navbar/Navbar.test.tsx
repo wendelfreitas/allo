@@ -75,22 +75,18 @@ describe('<Navbar />', () => {
     render(<Navbar />);
 
     const buttons = screen.getAllByRole('button');
-    // There should be at least 3 buttons: search, cart, mobile menu
     expect(buttons.length).toBeGreaterThanOrEqual(2);
   });
 
   it('should toggle mobile nav when menu button is clicked', () => {
     render(<Navbar />);
 
-    // Mobile nav should not be visible initially
-    expect(screen.queryByText('Restaurants')).toBeInTheDocument(); // desktop nav link
+    expect(screen.queryByText('Restaurants')).toBeInTheDocument();
 
     const buttons = screen.getAllByRole('button');
-    // The last button is the mobile menu toggle
     const menuButton = buttons[buttons.length - 1]!;
     fireEvent.click(menuButton);
 
-    // After clicking, MobileNav should render with its own "Restaurants" link
     const restaurantLinks = screen.getAllByText('Restaurants');
     expect(restaurantLinks.length).toBe(2);
   });

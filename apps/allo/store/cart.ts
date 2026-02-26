@@ -34,7 +34,6 @@ export const useCartStore = create<CartState>()(
         const state = get();
 
         if (state.restaurantId && state.restaurantId !== restaurantId) {
-          // Will be handled by UI with a confirmation dialog
           return;
         }
 

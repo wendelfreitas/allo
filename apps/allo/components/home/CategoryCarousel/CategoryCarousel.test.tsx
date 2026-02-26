@@ -81,7 +81,6 @@ describe('<CategoryCarousel />', () => {
 
     const { container } = render(<CategoryCarousel />);
 
-    // Skeletons are rendered (12 of them)
     const skeletons = container.querySelectorAll('[class*="rounded-2xl"]');
     expect(skeletons.length).toBeGreaterThan(0);
   });
