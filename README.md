@@ -1,5 +1,5 @@
 <p align="center">
-  <span style="font-size: 48px; font-weight: bold;">all<span style="color: #FF6B55;">O</span></span>
+  <img src="https://a.storyblok.com/f/310313/3600x1890/9ce1d6f51f/og_image.png" alt="allO" width="600" />
 </p>
 
 <h3 align="center">
