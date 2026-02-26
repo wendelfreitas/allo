@@ -1,4 +1,4 @@
-import { StoryFn, Meta } from '@storybook/react';
+import { StoryFn, Meta } from '@storybook/react-webpack5';
 import { HoverCard, HoverCardContent, HoverCardTrigger } from './HoverCard';
 import { CalendarDays } from 'lucide-react';
 

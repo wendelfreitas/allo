@@ -1,10 +1,11 @@
-import tsParser from '@typescript-eslint/parser';
 import js from '@eslint/js';
+import tsParser from '@typescript-eslint/parser';
 import tsPlugin from '@typescript-eslint/eslint-plugin';
+import globals from 'globals';
 
 export default [
   {
-    ignores: ['.next', 'node_modules', '*.config.js', '*.config.cjs'],
+    ignores: ['**/dist', '**/node_modules', '**/.next', '**/build'],
   },
   js.configs.recommended,
   {
@@ -15,6 +16,7 @@ export default [
         project: true,
       },
       globals: {
+        ...globals.browser,
         React: true,
         JSX: true,
       },

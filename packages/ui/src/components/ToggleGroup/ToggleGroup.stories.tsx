@@ -1,4 +1,4 @@
-import { StoryFn, Meta } from '@storybook/react';
+import { StoryFn, Meta } from '@storybook/react-webpack5';
 import { ToggleGroup, ToggleGroupItem } from './ToggleGroup';
 import { Bold, Italic, Underline } from 'lucide-react';
 

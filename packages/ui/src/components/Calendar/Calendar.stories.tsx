@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { DateRange } from 'react-day-picker';
-import { StoryFn, Meta } from '@storybook/react';
+import { StoryFn, Meta } from '@storybook/react-webpack5';
 import { Calendar } from './Calendar';
 
 const meta: Meta = {

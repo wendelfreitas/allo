@@ -1,4 +1,4 @@
-import { StoryFn, Meta } from '@storybook/react';
+import { StoryFn, Meta } from '@storybook/react-webpack5';
 
 import { Alert, AlertDescription, AlertTitle } from './Alert';
 import { Terminal } from 'lucide-react';

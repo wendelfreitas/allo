@@ -1,5 +1,5 @@
 import React from 'react';
-import { Parameters, Preview } from '@storybook/react';
+import { Parameters, Preview } from '@storybook/react-webpack5';
 import { ThemeProvider } from '../src/providers/ThemeProvider/ThemeProvider';
 
 import { withThemeByClassName } from '@storybook/addon-themes';

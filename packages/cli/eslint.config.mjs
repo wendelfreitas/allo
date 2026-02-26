@@ -1,22 +1,17 @@
 import tsParser from '@typescript-eslint/parser';
 import js from '@eslint/js';
 import tsPlugin from '@typescript-eslint/eslint-plugin';
+import globals from 'globals';
 
 export default [
-  {
-    ignores: ['.next', 'node_modules', '*.config.js', '*.config.cjs'],
-  },
+  { ignores: ['dist'] },
   js.configs.recommended,
   {
-    files: ['**/*.ts', '**/*.tsx'],
+    files: ['**/*.ts'],
     languageOptions: {
       parser: tsParser,
-      parserOptions: {
-        project: true,
-      },
       globals: {
-        React: true,
-        JSX: true,
+        ...globals.node,
       },
     },
     plugins: {
