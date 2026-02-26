@@ -1,4 +1,4 @@
-import { cn } from '@ascendio/utils/helpers';
+import { cn } from '@allo/utils/helpers';
 
 export const Skeleton = ({
   className,

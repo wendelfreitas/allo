@@ -5,7 +5,7 @@ import { Menu as MenubarMenu } from '@radix-ui/react-menubar';
 import { Check, ChevronRight, Circle } from 'lucide-react';
 import * as MenubarPrimitive from '@radix-ui/react-menubar';
 
-import { cn } from '@ascendio/utils/helpers';
+import { cn } from '@allo/utils/helpers';
 
 const MenubarGroup = MenubarPrimitive.Group;
 

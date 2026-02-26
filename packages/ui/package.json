@@ -1,5 +1,5 @@
 {
-  "name": "@ascendio/ui",
+  "name": "@allo/ui",
   "version": "0.0.0",
   "private": true,
   "main": "./src/index.ts",
@@ -14,8 +14,8 @@
     "build-storybook": "storybook build"
   },
   "devDependencies": {
-    "@ascendio/eslint-config": "workspace:*",
-    "@ascendio/typescript-config": "workspace:*",
+    "@allo/eslint-config": "workspace:*",
+    "@allo/typescript-config": "workspace:*",
     "@chromatic-com/storybook": "^5.0.1",
     "@eslint/eslintrc": "^3.3.4",
     "@eslint/js": "^9.39.3",
@@ -52,7 +52,7 @@
     "typescript": "^5.9.3"
   },
   "dependencies": {
-    "@ascendio/utils": "workspace:*",
+    "@allo/utils": "workspace:*",
     "@radix-ui/react-accordion": "^1.2.12",
     "@radix-ui/react-alert-dialog": "^1.1.15",
     "@radix-ui/react-avatar": "^1.1.11",

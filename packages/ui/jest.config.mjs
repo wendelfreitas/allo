@@ -11,8 +11,8 @@ export default {
   collectCoverage: true,
   collectCoverageFrom: [],
   setupFilesAfterEnv: ['./.jest/setup.ts'],
-  transformIgnorePatterns: ['node_modules/(?!(@ascendio|utils)/)'],
+  transformIgnorePatterns: ['node_modules/(?!(@allo|utils)/)'],
   moduleNameMapper: {
-    '^@ascendio/(.*)$': '<rootDir>/../utils/src/helpers',
+    '^@allo/(.*)$': '<rootDir>/../utils/src/helpers',
   },
 };

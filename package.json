@@ -1,5 +1,5 @@
 {
-  "name": "ascendio",
+  "name": "allo",
   "private": true,
   "scripts": {
     "build": "turbo build",

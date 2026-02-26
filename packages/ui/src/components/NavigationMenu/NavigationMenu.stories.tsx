@@ -2,7 +2,7 @@
 
 import * as React from 'react';
 
-import { cn } from '@ascendio/utils/helpers';
+import { cn } from '@allo/utils/helpers';
 
 import { StoryFn, Meta } from '@storybook/react-webpack5';
 

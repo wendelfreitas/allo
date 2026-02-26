@@ -1,5 +1,5 @@
 {
-  "name": "@ascendio/utils",
+  "name": "@allo/utils",
   "version": "0.0.0",
   "scripts": {
     "dev": "tsc --watch",
@@ -14,8 +14,8 @@
     }
   },
   "devDependencies": {
-    "@ascendio/eslint-config": "workspace:*",
-    "@ascendio/typescript-config": "workspace:*",
+    "@allo/eslint-config": "workspace:*",
+    "@allo/typescript-config": "workspace:*",
     "@eslint/js": "^9.39.3",
     "@types/jest": "^30.0.0",
     "@typescript-eslint/eslint-plugin": "^8.56.1",

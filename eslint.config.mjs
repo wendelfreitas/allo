@@ -13,7 +13,7 @@ export default [
     languageOptions: {
       parser: tsParser,
       parserOptions: {
-        project: true,
+        projectService: true,
       },
       globals: {
         ...globals.browser,
@@ -26,6 +26,14 @@ export default [
     },
     rules: {
       ...tsPlugin.configs.recommended.rules,
+    },
+  },
+  {
+    files: ['**/*.test.ts', '**/*.test.tsx', '**/*.spec.ts', '**/*.spec.tsx'],
+    languageOptions: {
+      globals: {
+        ...globals.jest,
+      },
     },
   },
 ];

@@ -1,5 +1,5 @@
 {
-  "name": "@ascendio/hooks",
+  "name": "@allo/hooks",
   "version": "0.0.0",
   "private": true,
   "main": "./src/index.ts",
@@ -11,8 +11,8 @@
     "test:watch": "pnpm run test --watch"
   },
   "devDependencies": {
-    "@ascendio/eslint-config": "workspace:*",
-    "@ascendio/typescript-config": "workspace:*",
+    "@allo/eslint-config": "workspace:*",
+    "@allo/typescript-config": "workspace:*",
     "@eslint/eslintrc": "^3.3.4",
     "@eslint/js": "^9.39.3",
     "@typescript-eslint/parser": "^8.56.1",

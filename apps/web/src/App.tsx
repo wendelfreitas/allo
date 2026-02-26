@@ -1,5 +1,5 @@
-import { Button } from '@ascendio/ui';
-import { useTheme } from '@ascendio/hooks';
+import { Button } from '@allo/ui';
+import { useTheme } from '@allo/hooks';
 
 export const App = () => {
   const { theme, toggle } = useTheme();
@@ -32,24 +32,20 @@ export const App = () => {
           />
         )}
 
-        <a
-          href="https://docs.ascendio.dev"
-          target="__blank"
-          className="mx-auto"
-        >
-          <span className="sr-only">Ascendio</span>
+        <a href="https://docs.allo.dev" target="__blank" className="mx-auto">
+          <span className="sr-only">Allo</span>
 
           {theme === 'dark' ? (
             <img
               className="h-8 my-8 mx-auto hidden dark:block"
               src="https://imgur.com/Gdq88JD.png"
-              alt="Ascendio"
+              alt="Allo"
             />
           ) : (
             <img
               className="h-8 my-8 mx-auto block dark:hidden"
               src="https://imgur.com/ZU0nrEF.png"
-              alt="Ascendio"
+              alt="Allo"
             />
           )}
         </a>

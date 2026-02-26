@@ -27,7 +27,7 @@ export default [
     },
     // Type-aware linting for files in tsconfig.lint.json
     ...compat.extends(
-        "@ascendio/eslint-config/react-internal.js",
+        "@allo/eslint-config/react-internal.js",
         "plugin:storybook/recommended",
     ),
     {
@@ -45,7 +45,7 @@ export default [
 
             parserOptions: {
                 project: "./tsconfig.lint.json",
-                tsconfigRootDir: "/Users/wendel/Projects/Wendel/daito/packages/ui",
+                tsconfigRootDir: __dirname,
             },
         },
 

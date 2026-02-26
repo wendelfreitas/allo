@@ -1,5 +1,5 @@
 {
-  "name": "@ascendio/landing",
+  "name": "@allo/landing",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -9,15 +9,15 @@
     "lint": "eslint . --max-warnings 0"
   },
   "dependencies": {
-    "@ascendio/hooks": "workspace:*",
-    "@ascendio/ui": "workspace:*",
+    "@allo/hooks": "workspace:*",
+    "@allo/ui": "workspace:*",
     "next": "^16.1.6",
     "react": "^19.2.4",
     "react-dom": "^19.2.4"
   },
   "devDependencies": {
-    "@ascendio/eslint-config": "workspace:*",
-    "@ascendio/typescript-config": "workspace:*",
+    "@allo/eslint-config": "workspace:*",
+    "@allo/typescript-config": "workspace:*",
     "@eslint/js": "^9.39.3",
     "@types/node": "^25.3.0",
     "@types/react": "^19.2.14",

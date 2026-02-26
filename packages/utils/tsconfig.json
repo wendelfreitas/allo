@@ -1,5 +1,5 @@
 {
-  "extends": "@ascendio/typescript-config/base.json",
+  "extends": "@allo/typescript-config/base.json",
   "compilerOptions": {
     "types": ["jest"],
     "outDir": "dist",

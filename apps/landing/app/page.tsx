@@ -1,7 +1,7 @@
 'use client';
 
-import { Button } from '@ascendio/ui';
-import { useTheme } from '@ascendio/hooks';
+import { Button } from '@allo/ui';
+import { useTheme } from '@allo/hooks';
 import Image from 'next/image';
 
 export default function Example() {
@@ -25,7 +25,7 @@ export default function Example() {
           <Image
             className="h-64 mx-auto mb-16 hidden dark:block"
             src="/white-rocket.png"
-            alt="Ascendio White Rocket"
+            alt="Allo White Rocket"
             width={225}
             height={256}
           />
@@ -33,18 +33,14 @@ export default function Example() {
           <Image
             className="h-64 mx-auto mb-16 block dark:hidden"
             src="/black-rocket.png"
-            alt="Ascendio Black Rocket"
+            alt="Allo Black Rocket"
             width={225}
             height={256}
           />
         )}
 
-        <a
-          href="https://docs.ascendio.dev"
-          target="__blank"
-          className="mx-auto"
-        >
-          <span className="sr-only">Ascendio</span>
+        <a href="https://docs.allo.dev" target="__blank" className="mx-auto">
+          <span className="sr-only">Allo</span>
 
           {theme === 'dark' ? (
             <Image
@@ -52,7 +48,7 @@ export default function Example() {
               src="/white-logo.png"
               width={250}
               height={100}
-              alt="Ascendio"
+              alt="Allo"
             />
           ) : (
             <Image
@@ -60,7 +56,7 @@ export default function Example() {
               src="/black-logo.png"
               width={250}
               height={100}
-              alt="Ascendio"
+              alt="Allo"
             />
           )}
         </a>

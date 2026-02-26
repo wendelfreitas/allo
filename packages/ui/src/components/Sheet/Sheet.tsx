@@ -5,7 +5,7 @@ import * as SheetPrimitive from '@radix-ui/react-dialog';
 import { tv, type VariantProps } from 'tailwind-variants';
 import { X } from 'lucide-react';
 
-import { cn } from '@ascendio/utils/helpers';
+import { cn } from '@allo/utils/helpers';
 
 const Sheet = SheetPrimitive.Root;
 

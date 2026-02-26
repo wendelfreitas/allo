@@ -13,7 +13,7 @@ const compat = new FlatCompat({
 });
 
 export default [
-  ...compat.extends('@ascendio/eslint-config/react-internal.js'),
+  ...compat.extends('@allo/eslint-config/react-internal.js'),
   {
     languageOptions: {
       parser: tsParser,
