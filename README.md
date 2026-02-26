@@ -1,81 +1,144 @@
-# Turborepo starter
+<p align="center">
+  <span style="font-size: 48px; font-weight: bold;">all<span style="color: #FF6B55;">O</span></span>
+</p>
 
-This is an official starter Turborepo.
+<h3 align="center">
+  A premium food delivery marketplace
+</h3>
 
-## Using this example
+<p align="center">
+  Built with Next.js 16 &bull; React 19 &bull; Tailwind CSS v4 &bull; Turborepo
+</p>
 
-Run the following command:
+<p align="center">
+  <img src="https://img.shields.io/badge/Next.js-16-black?logo=next.js" alt="Next.js" />
+  <img src="https://img.shields.io/badge/React-19-blue?logo=react" alt="React" />
+  <img src="https://img.shields.io/badge/TypeScript-5.9-blue?logo=typescript" alt="TypeScript" />
+  <img src="https://img.shields.io/badge/Tailwind-v4-38bdf8?logo=tailwindcss" alt="Tailwind" />
+  <img src="https://img.shields.io/badge/Turborepo-2.8-blueviolet?logo=turborepo" alt="Turborepo" />
+</p>
 
-```sh
-npx create-turbo@latest
-```
+---
 
-## What's inside?
+## Prerequisites
 
-This Turborepo includes the following packages/apps:
+- **Node.js** >= 18
+- **pnpm** >= 9
 
-### Apps and Packages
+## Getting Started
 
-- `docs`: a [Next.js](https://nextjs.org/) app
-- `web`: another [Next.js](https://nextjs.org/) app
-- `@allo/ui`: a stub React component library shared by both `web` and `docs` applications
-- `@allo/eslint-config`: `eslint` configurations (includes `eslint-config-next` and `eslint-config-prettier`)
-- `@allo/typescript-config`: `tsconfig.json`s used throughout the monorepo
+```bash
+# Clone the repository
+git clone https://github.com/your-username/allo.git
+cd allo
 
-Each package/app is 100% [TypeScript](https://www.typescriptlang.org/).
+# Install dependencies
+pnpm install
 
-### Utilities
-
-This Turborepo has some additional tools already setup for you:
-
-- [TypeScript](https://www.typescriptlang.org/) for static type checking
-- [ESLint](https://eslint.org/) for code linting
-- [Prettier](https://prettier.io) for code formatting
-
-### Build
-
-To build all apps and packages, run the following command:
-
-```
-cd my-turborepo
-pnpm build
-```
-
-### Develop
-
-To develop all apps and packages, run the following command:
-
-```
-cd my-turborepo
+# Start the dev server
 pnpm dev
 ```
 
-### Remote Caching
+The app will be running at **http://localhost:3000**.
 
-Turborepo can use a technique known as [Remote Caching](https://turbo.build/repo/docs/core-concepts/remote-caching) to share cache artifacts across machines, enabling you to share build caches with your team and CI/CD pipelines.
+## Scripts
 
-By default, Turborepo will cache locally. To enable Remote Caching you will need an account with Vercel. If you don't have an account you can [create one](https://vercel.com/signup), then enter the following commands:
+Run these from the project root. Turborepo handles orchestration across all apps and packages.
+
+| Command | Description |
+|---|---|
+| `pnpm dev` | Start all apps in development mode |
+| `pnpm build` | Build all apps and packages |
+| `pnpm lint` | Lint all apps and packages |
+| `pnpm test` | Run all test suites |
+| `pnpm typecheck` | Type-check all packages |
+| `pnpm format` | Format all files with Prettier |
+
+### Running a single app
+
+```bash
+pnpm dev --filter=@allo/allo
+pnpm test --filter=@allo/allo
+pnpm build --filter=@allo/allo
+```
+
+## Project Structure
 
 ```
-cd my-turborepo
-npx turbo login
+allo/
+├── apps/
+│   └── allo/                  Main marketplace app
+│       ├── app/               Next.js App Router pages & API routes
+│       ├── components/        UI components (each in its own folder)
+│       ├── hooks/             React Query hooks
+│       ├── store/             Zustand state management
+│       └── lib/               Axios client & providers
+│
+├── packages/
+│   ├── ui/                    Shared component library (42 components)
+│   ├── hooks/                 Shared React hooks
+│   ├── utils/                 Shared utilities (cn, helpers)
+│   ├── eslint-config/         ESLint configurations
+│   └── typescript-config/     Shared tsconfig presets
+│
+├── turbo.json                 Turborepo pipeline config
+└── package.json               Root workspace config
 ```
 
-This will authenticate the Turborepo CLI with your [Vercel account](https://vercel.com/docs/concepts/personal-accounts/overview).
+## Tech Stack
 
-Next, you can link your Turborepo to your Remote Cache by running the following command from the root of your Turborepo:
+| Layer | Technology |
+|---|---|
+| **Framework** | Next.js 16 (App Router) |
+| **UI** | React 19, Tailwind CSS v4, Radix UI |
+| **State** | Zustand (cart, persisted to localStorage) |
+| **Data Fetching** | TanStack React Query v5 + Axios |
+| **Animations** | Framer Motion |
+| **Icons** | Lucide React |
+| **Component Variants** | Tailwind Variants |
+| **Testing** | Jest 30 + React Testing Library |
+| **Monorepo** | Turborepo + pnpm Workspaces |
+| **Code Quality** | ESLint, Prettier, Husky, Commitlint |
 
+## App Features
+
+- **Homepage** with hero, category carousel, featured restaurants, promo banners, metrics
+- **Restaurant listing** with search, cuisine filters, and sorting
+- **Restaurant detail** with tabbed menu categories and item details
+- **Cart system** with drawer, quantity controls, and restaurant conflict handling
+- **Checkout flow** with delivery form, payment selection, and order review
+- **Order tracking** with real-time status progression
+- **Fully responsive** across mobile, tablet, and desktop
+- **Dark theme** with coral (#FF6B55) accent
+
+## API Routes
+
+The app uses Next.js API routes with in-memory mock data to simulate a real backend.
+
+| Endpoint | Method | Description |
+|---|---|---|
+| `/api/categories` | GET | List cuisine categories |
+| `/api/restaurants` | GET | Search, filter, sort, paginate restaurants |
+| `/api/restaurants/[slug]` | GET | Restaurant details with full menu |
+| `/api/promotions` | GET | Promotional banners |
+| `/api/orders` | POST | Create a new order |
+| `/api/orders/[id]` | GET | Order status (progresses over time) |
+
+## Testing
+
+Every component has its own test file co-located in its folder.
+
+```bash
+# Run all tests
+pnpm test
+
+# Run tests for the main app only
+pnpm test --filter=@allo/allo
+
+# Watch mode
+pnpm test --filter=@allo/allo -- --watch
 ```
-npx turbo link
-```
 
-## Useful Links
+## License
 
-Learn more about the power of Turborepo:
-
-- [Tasks](https://turbo.build/repo/docs/core-concepts/monorepos/running-tasks)
-- [Caching](https://turbo.build/repo/docs/core-concepts/caching)
-- [Remote Caching](https://turbo.build/repo/docs/core-concepts/remote-caching)
-- [Filtering](https://turbo.build/repo/docs/core-concepts/monorepos/filtering)
-- [Configuration Options](https://turbo.build/repo/docs/reference/configuration)
-- [CLI Usage](https://turbo.build/repo/docs/reference/command-line-reference)
+MIT
