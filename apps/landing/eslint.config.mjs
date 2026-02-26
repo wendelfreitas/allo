@@ -4,7 +4,7 @@ import tsPlugin from '@typescript-eslint/eslint-plugin';
 
 export default [
   {
-    ignores: ['.next', 'node_modules', '*.config.js', '*.config.cjs'],
+    ignores: ['.next', 'node_modules', '.jest', '*.config.js', '*.config.cjs'],
   },
   js.configs.recommended,
   {
@@ -24,6 +24,24 @@ export default [
     },
     rules: {
       ...tsPlugin.configs.recommended.rules,
+    },
+  },
+  {
+    files: ['**/*.test.ts', '**/*.test.tsx'],
+    languageOptions: {
+      globals: {
+        describe: true,
+        it: true,
+        expect: true,
+        jest: true,
+        beforeEach: true,
+        afterEach: true,
+        beforeAll: true,
+        afterAll: true,
+      },
+    },
+    rules: {
+      '@typescript-eslint/no-explicit-any': 'off',
     },
   },
 ];

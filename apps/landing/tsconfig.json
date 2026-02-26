@@ -2,6 +2,7 @@
   "extends": "@allo/typescript-config/nextjs.json",
   "compilerOptions": {
     "lib": ["dom", "dom.iterable", "esnext"],
+    "types": ["@testing-library/jest-dom", "@types/jest"],
     "plugins": [
       {
         "name": "next"
