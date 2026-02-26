@@ -8,7 +8,7 @@ jest.mock('next/link', () => ({
 
 jest.mock('next/image', () => ({
   __esModule: true,
-  default: (props: any) => <img {...props} />,
+  default: ({ src, alt, className }: any) => <img src={src} alt={alt} className={className} />,
 }));
 
 const mockCloseCart = jest.fn();

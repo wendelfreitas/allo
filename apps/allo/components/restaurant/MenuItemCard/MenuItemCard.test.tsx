@@ -3,7 +3,7 @@ import { MenuItemCard } from './MenuItemCard';
 
 jest.mock('next/image', () => ({
   __esModule: true,
-  default: (props: any) => <img {...props} />,
+  default: ({ src, alt, className }: any) => <img src={src} alt={alt} className={className} />,
 }));
 
 const mockItem = {

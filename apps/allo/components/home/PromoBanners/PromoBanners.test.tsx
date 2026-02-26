@@ -4,12 +4,12 @@ import { usePromotions } from '../../../hooks/use-promotions/use-promotions';
 
 jest.mock('next/image', () => ({
   __esModule: true,
-  default: (props: any) => <img {...props} />,
+  default: ({ src, alt, className }: any) => <img src={src} alt={alt} className={className} />,
 }));
 
 jest.mock('framer-motion', () => ({
   motion: {
-    div: ({ children, ...props }: any) => <div {...props}>{children}</div>,
+    div: ({ children, className }: any) => <div className={className}>{children}</div>,
   },
 }));
 

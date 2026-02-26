@@ -3,7 +3,7 @@ import { OrderProgress } from './OrderProgress';
 
 jest.mock('framer-motion', () => ({
   motion: {
-    div: ({ children, ...props }: any) => <div {...props}>{children}</div>,
+    div: ({ children, className }: any) => <div className={className}>{children}</div>,
   },
 }));
 

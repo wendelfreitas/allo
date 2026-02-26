@@ -15,11 +15,11 @@ jest.mock('next/navigation', () => ({
 
 jest.mock('framer-motion', () => ({
   motion: {
-    div: ({ children, ...props }: any) => <div {...props}>{children}</div>,
-    h1: ({ children, ...props }: any) => <h1 {...props}>{children}</h1>,
-    p: ({ children, ...props }: any) => <p {...props}>{children}</p>,
-    form: ({ children, onSubmit, ...props }: any) => (
-      <form onSubmit={onSubmit} {...props}>{children}</form>
+    div: ({ children, className }: any) => <div className={className}>{children}</div>,
+    h1: ({ children, className }: any) => <h1 className={className}>{children}</h1>,
+    p: ({ children, className }: any) => <p className={className}>{children}</p>,
+    form: ({ children, onSubmit, className }: any) => (
+      <form onSubmit={onSubmit} className={className}>{children}</form>
     ),
   },
 }));
