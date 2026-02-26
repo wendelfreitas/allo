@@ -9,13 +9,15 @@ import {
   Button,
   Separator,
 } from '@allo/ui';
+import { useTranslations } from 'next-intl';
 import { useCartStore } from '../../../store/cart';
 import { CartItem } from '../../cart/CartItem/CartItem';
 import { CartSummary } from '../../cart/CartSummary/CartSummary';
 import { EmptyCart } from '../../cart/EmptyCart/EmptyCart';
-import Link from 'next/link';
+import { Link } from '@/i18n/navigation';
 
 export function CartDrawer() {
+  const t = useTranslations('cart');
   const isOpen = useCartStore((s) => s.isOpen);
   const closeCart = useCartStore((s) => s.closeCart);
   const items = useCartStore((s) => s.items);
@@ -26,10 +28,10 @@ export function CartDrawer() {
       <SheetContent side="right" className="flex w-full flex-col sm:max-w-md">
         <SheetHeader>
           <SheetTitle className="text-left">
-            Your Order
+            {t('yourOrder')}
             {restaurantName && (
               <span className="block text-sm font-normal text-muted-foreground">
-                from {restaurantName}
+                {t('from', { restaurantName })}
               </span>
             )}
           </SheetTitle>
@@ -54,7 +56,7 @@ export function CartDrawer() {
             <SheetFooter className="mt-4">
               <Link href="/checkout" className="w-full" onClick={closeCart}>
                 <Button className="w-full" size="lg">
-                  Proceed to Checkout
+                  {t('proceedToCheckout')}
                 </Button>
               </Link>
             </SheetFooter>

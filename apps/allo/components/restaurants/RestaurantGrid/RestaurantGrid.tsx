@@ -1,6 +1,7 @@
 'use client';
 
 import { Skeleton } from '@allo/ui';
+import { useTranslations } from 'next-intl';
 import { RestaurantCard } from '../RestaurantCard/RestaurantCard';
 import { AnimatedSection } from '../../shared/AnimatedSection/AnimatedSection';
 import type { Restaurant } from '../../../app/api/_data/types';
@@ -14,6 +15,8 @@ export function RestaurantGrid({
   restaurants,
   isLoading,
 }: RestaurantGridProps) {
+  const t = useTranslations('restaurants');
+
   if (isLoading) {
     return (
       <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
@@ -31,9 +34,9 @@ export function RestaurantGrid({
   if (!restaurants?.length) {
     return (
       <div className="py-20 text-center">
-        <p className="text-lg font-medium">No restaurants found</p>
+        <p className="text-lg font-medium">{t('noResults')}</p>
         <p className="mt-1 text-sm text-muted-foreground">
-          Try adjusting your search or filters
+          {t('noResultsHint')}
         </p>
       </div>
     );

@@ -1,6 +1,7 @@
 'use client';
 
-import Link from 'next/link';
+import { useTranslations } from 'next-intl';
+import { Link } from '@/i18n/navigation';
 import { motion } from 'framer-motion';
 
 interface MobileNavProps {
@@ -8,6 +9,8 @@ interface MobileNavProps {
 }
 
 export function MobileNav({ onClose }: MobileNavProps) {
+  const t = useTranslations('common');
+
   return (
     <motion.div
       initial={{ opacity: 0, height: 0 }}
@@ -21,7 +24,7 @@ export function MobileNav({ onClose }: MobileNavProps) {
           onClick={onClose}
           className="block rounded-lg px-3 py-2 text-sm text-muted-foreground transition-colors hover:bg-muted hover:text-foreground"
         >
-          Restaurants
+          {t('navbar.restaurants')}
         </Link>
       </div>
     </motion.div>

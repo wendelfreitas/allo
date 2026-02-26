@@ -1,0 +1,30 @@
+{
+  "order": {
+    "notFound": "Pedido não encontrado",
+    "notFoundHint": "Este pedido não existe ou expirou.",
+    "tracking": "Acompanhar Pedido",
+    "estimatedDelivery": "Entrega estimada: {time}",
+    "details": "Detalhes do Pedido",
+    "items": "Itens",
+    "subtotal": "Subtotal",
+    "deliveryFee": "Taxa de entrega",
+    "total": "Total",
+    "creditCard": "Cartão de Crédito",
+    "pix": "PIX",
+    "cashOnDelivery": "Dinheiro na Entrega",
+    "status": {
+      "confirmed": "Confirmado",
+      "preparing": "Preparando",
+      "ready": "Pronto",
+      "out_for_delivery": "A caminho",
+      "delivered": "Entregue"
+    },
+    "statusMessages": {
+      "confirmed": "Seu pedido foi confirmado! O restaurante começará a prepará-lo em breve.",
+      "preparing": "A cozinha está trabalhando no seu pedido. Aguarde!",
+      "ready": "Seu pedido está pronto e aguardando um entregador.",
+      "out_for_delivery": "Seu pedido está a caminho! O entregador está indo até você.",
+      "delivered": "Seu pedido foi entregue. Aproveite sua refeição!"
+    }
+  }
+}

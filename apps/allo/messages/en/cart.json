@@ -1,0 +1,12 @@
+{
+  "cart": {
+    "yourOrder": "Your Order",
+    "from": "from {restaurantName}",
+    "proceedToCheckout": "Proceed to Checkout",
+    "empty": "Your cart is empty",
+    "emptyHint": "Browse restaurants and add items to get started",
+    "subtotal": "Subtotal",
+    "deliveryFee": "Delivery fee",
+    "total": "Total"
+  }
+}

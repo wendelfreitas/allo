@@ -1,0 +1,41 @@
+{
+  "common": {
+    "navbar": {
+      "restaurants": "Restaurantes"
+    },
+    "footer": {
+      "tagline": "Entrega premium dos melhores restaurantes da sua cidade.",
+      "explore": "Explorar",
+      "restaurants": "Restaurantes",
+      "pizza": "Pizza",
+      "sushi": "Sushi",
+      "burgers": "Hambúrgueres",
+      "company": "Empresa",
+      "aboutUs": "Sobre Nós",
+      "careers": "Carreiras",
+      "blog": "Blog",
+      "support": "Suporte",
+      "helpCenter": "Central de Ajuda",
+      "contact": "Contato",
+      "terms": "Termos",
+      "copyright": "© {year} allO Eats. Todos os direitos reservados. Esta é uma aplicação demo."
+    },
+    "sortOptions": {
+      "rating": "Mais Bem Avaliados",
+      "delivery_time": "Entrega Mais Rápida",
+      "delivery_fee": "Menor Taxa",
+      "name": "Nome A-Z"
+    },
+    "filters": {
+      "all": "Todos"
+    },
+    "delivery": "Entrega",
+    "free": "Grátis",
+    "min": "Mín.",
+    "closed": "Fechado",
+    "featured": "Destaque",
+    "popular": "Popular",
+    "backToRestaurants": "Voltar aos restaurantes",
+    "browseRestaurants": "Ver Restaurantes"
+  }
+}

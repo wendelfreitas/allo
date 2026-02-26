@@ -1,18 +1,20 @@
 'use client';
 
 import { useState } from 'react';
-import { useRouter } from 'next/navigation';
+import { useTranslations } from 'next-intl';
 import { Button, Card, Separator } from '@allo/ui';
 import { ArrowLeft, Loader2 } from 'lucide-react';
-import Link from 'next/link';
-import { useCartStore } from '../../../store/cart';
-import { useCreateOrder } from '../../../hooks/use-create-order/use-create-order';
-import { DeliveryForm } from '../../../components/checkout/DeliveryForm/DeliveryForm';
-import { PaymentSelector } from '../../../components/checkout/PaymentSelector/PaymentSelector';
-import { OrderReview } from '../../../components/checkout/OrderReview/OrderReview';
-import { restaurants } from '../../../app/api/_data/restaurants';
+import { Link, useRouter } from '@/i18n/navigation';
+import { useCartStore } from '../../../../store/cart';
+import { useCreateOrder } from '../../../../hooks/use-create-order/use-create-order';
+import { DeliveryForm } from '../../../../components/checkout/DeliveryForm/DeliveryForm';
+import { PaymentSelector } from '../../../../components/checkout/PaymentSelector/PaymentSelector';
+import { OrderReview } from '../../../../components/checkout/OrderReview/OrderReview';
+import { restaurants } from '../../../../app/api/_data/restaurants';
 
 export default function CheckoutPage() {
+  const t = useTranslations('checkout');
+  const tc = useTranslations('common');
   const router = useRouter();
   const items = useCartStore((s) => s.items);
   const restaurantId = useCartStore((s) => s.restaurantId);
@@ -54,12 +56,12 @@ export default function CheckoutPage() {
   if (items.length === 0 && !isSubmitted) {
     return (
       <div className="mx-auto max-w-2xl px-4 py-20 text-center sm:px-6">
-        <h1 className="text-2xl font-bold">Your cart is empty</h1>
+        <h1 className="text-2xl font-bold">{t('emptyCart')}</h1>
         <p className="mt-2 text-muted-foreground">
-          Add items to your cart before checking out
+          {t('emptyCartHint')}
         </p>
         <Link href="/restaurants">
-          <Button className="mt-6">Browse Restaurants</Button>
+          <Button className="mt-6">{tc('browseRestaurants')}</Button>
         </Link>
       </div>
     );
@@ -72,10 +74,10 @@ export default function CheckoutPage() {
         className="mb-6 inline-flex items-center gap-1 text-sm text-muted-foreground hover:text-foreground"
       >
         <ArrowLeft size={16} />
-        Back to restaurants
+        {tc('backToRestaurants')}
       </Link>
 
-      <h1 className="mb-8 text-3xl font-bold">Checkout</h1>
+      <h1 className="mb-8 text-3xl font-bold">{t('title')}</h1>
 
       <div className="grid gap-8 lg:grid-cols-[1fr_380px]">
         <div className="space-y-8">
@@ -109,10 +111,10 @@ export default function CheckoutPage() {
               {createOrder.isPending ? (
                 <>
                   <Loader2 size={16} className="mr-2 animate-spin" />
-                  Placing order...
+                  {t('placingOrder')}
                 </>
               ) : (
-                'Place Order'
+                t('placeOrder')
               )}
             </Button>
           </Card>

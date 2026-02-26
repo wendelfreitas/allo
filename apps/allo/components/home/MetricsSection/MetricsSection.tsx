@@ -1,15 +1,18 @@
 'use client';
 
+import { useTranslations } from 'next-intl';
 import { AnimatedSection } from '../../shared/AnimatedSection/AnimatedSection';
 
-const metrics = [
-  { value: '500+', label: 'Restaurants' },
-  { value: '50K+', label: 'Happy customers' },
-  { value: '25 min', label: 'Avg. delivery' },
-  { value: '4.8', label: 'App rating' },
-];
-
 export function MetricsSection() {
+  const t = useTranslations('home.metrics');
+
+  const metrics = [
+    { value: '500+', label: t('restaurants') },
+    { value: '50K+', label: t('happyCustomers') },
+    { value: '25 min', label: t('avgDelivery') },
+    { value: '4.8', label: t('appRating') },
+  ];
+
   return (
     <section className="section-light py-20">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">

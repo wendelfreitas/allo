@@ -1,0 +1,23 @@
+{
+  "checkout": {
+    "title": "Finalizar Pedido",
+    "emptyCart": "Seu carrinho está vazio",
+    "emptyCartHint": "Adicione itens ao carrinho antes de finalizar",
+    "placeOrder": "Fazer Pedido",
+    "placingOrder": "Fazendo pedido...",
+    "deliveryAddress": "Endereço de Entrega",
+    "streetAddress": "Endereço",
+    "addressPlaceholder": "Rua Principal 123, Apto 4B",
+    "deliveryInstructions": "Instruções de Entrega (opcional)",
+    "instructionsPlaceholder": "Tocar campainha, deixar na porta, etc.",
+    "paymentMethod": "Forma de Pagamento",
+    "creditCard": "Cartão de Crédito",
+    "cashOnDelivery": "Dinheiro na Entrega",
+    "pix": "PIX",
+    "orderReview": "Resumo do Pedido",
+    "from": "De {restaurantName}",
+    "subtotal": "Subtotal",
+    "deliveryFee": "Taxa de entrega",
+    "total": "Total"
+  }
+}

@@ -2,12 +2,15 @@
 
 import { Button } from '@allo/ui';
 import { ShoppingBag, Menu, X, Search } from 'lucide-react';
-import Link from 'next/link';
+import { useTranslations } from 'next-intl';
+import { Link } from '@/i18n/navigation';
 import { useState } from 'react';
 import { useCartStore } from '../../../store/cart';
 import { MobileNav } from '../MobileNav/MobileNav';
+import { LocaleSwitcher } from '../LocaleSwitcher/LocaleSwitcher';
 
 export function Navbar() {
+  const t = useTranslations('common');
   const [mobileOpen, setMobileOpen] = useState(false);
   const itemCount = useCartStore((s) => s.getItemCount());
   const openCart = useCartStore((s) => s.openCart);
@@ -31,7 +34,7 @@ export function Navbar() {
               href="/restaurants"
               className="text-sm text-muted-foreground transition-colors hover:text-foreground"
             >
-              Restaurants
+              {t('navbar.restaurants')}
             </Link>
           </div>
         </div>
@@ -42,6 +45,8 @@ export function Navbar() {
               <Search size={18} />
             </Button>
           </Link>
+
+          <LocaleSwitcher />
 
           <Button
             variant="ghost"

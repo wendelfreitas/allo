@@ -7,20 +7,23 @@ import {
   SelectTrigger,
   SelectValue,
 } from '@allo/ui';
+import { useTranslations } from 'next-intl';
 
 interface SortSelectProps {
   value: string;
   onChange: (value: string) => void;
 }
 
-const sortOptions = [
-  { value: 'rating', label: 'Top Rated' },
-  { value: 'delivery_time', label: 'Fastest Delivery' },
-  { value: 'delivery_fee', label: 'Lowest Fee' },
-  { value: 'name', label: 'Name A-Z' },
-];
-
 export function SortSelect({ value, onChange }: SortSelectProps) {
+  const t = useTranslations('common.sortOptions');
+
+  const sortOptions = [
+    { value: 'rating', label: t('rating') },
+    { value: 'delivery_time', label: t('delivery_time') },
+    { value: 'delivery_fee', label: t('delivery_fee') },
+    { value: 'name', label: t('name') },
+  ];
+
   return (
     <Select value={value} onValueChange={onChange}>
       <SelectTrigger className="w-[180px]">

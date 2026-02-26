@@ -2,22 +2,25 @@
 
 import { RadioGroup, RadioGroupItem, Label } from '@allo/ui';
 import { CreditCard, Banknote, Smartphone } from 'lucide-react';
+import { useTranslations } from 'next-intl';
 
 interface PaymentSelectorProps {
   value: string;
   onChange: (value: string) => void;
 }
 
-const paymentMethods = [
-  { id: 'card', label: 'Credit Card', icon: CreditCard },
-  { id: 'cash', label: 'Cash on Delivery', icon: Banknote },
-  { id: 'pix', label: 'PIX', icon: Smartphone },
-];
-
 export function PaymentSelector({ value, onChange }: PaymentSelectorProps) {
+  const t = useTranslations('checkout');
+
+  const paymentMethods = [
+    { id: 'card', label: t('creditCard'), icon: CreditCard },
+    { id: 'cash', label: t('cashOnDelivery'), icon: Banknote },
+    { id: 'pix', label: t('pix'), icon: Smartphone },
+  ];
+
   return (
     <div className="space-y-4">
-      <h2 className="text-lg font-semibold">Payment Method</h2>
+      <h2 className="text-lg font-semibold">{t('paymentMethod')}</h2>
       <RadioGroup value={value} onValueChange={onChange}>
         {paymentMethods.map((method) => (
           <div

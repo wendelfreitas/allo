@@ -3,14 +3,10 @@ import { HeroSection } from './HeroSection';
 
 const mockPush = jest.fn();
 
-jest.mock('next/link', () => ({
-  __esModule: true,
-  default: ({ children, href }: any) => <a href={href}>{children}</a>,
-}));
-
-jest.mock('next/navigation', () => ({
-  useRouter: () => ({ push: mockPush }),
-  useSearchParams: () => new URLSearchParams(),
+jest.mock('@/i18n/navigation', () => ({
+  Link: ({ children, href, ...props }: any) => <a href={href} {...props}>{children}</a>,
+  useRouter: () => ({ push: mockPush, replace: jest.fn(), back: jest.fn() }),
+  usePathname: () => '/',
 }));
 
 jest.mock('framer-motion', () => ({

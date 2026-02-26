@@ -3,6 +3,7 @@
 import Image from 'next/image';
 import { Badge } from '@allo/ui';
 import { Clock, Bike, MapPin } from 'lucide-react';
+import { useTranslations } from 'next-intl';
 import { StarRating } from '../../shared/StarRating/StarRating';
 import { PriceDisplay } from '../../shared/PriceDisplay/PriceDisplay';
 import type { RestaurantWithMenu } from '../../../app/api/_data/types';
@@ -12,6 +13,8 @@ interface RestaurantHeaderProps {
 }
 
 export function RestaurantHeader({ restaurant }: RestaurantHeaderProps) {
+  const t = useTranslations('common');
+
   return (
     <div>
       <div className="relative h-48 overflow-hidden sm:h-64 lg:h-80">
@@ -44,7 +47,7 @@ export function RestaurantHeader({ restaurant }: RestaurantHeaderProps) {
                   {restaurant.name}
                 </h1>
                 {!restaurant.isOpen && (
-                  <Badge variant="destructive">Closed</Badge>
+                  <Badge variant="destructive">{t('closed')}</Badge>
                 )}
               </div>
               <StarRating
@@ -65,7 +68,7 @@ export function RestaurantHeader({ restaurant }: RestaurantHeaderProps) {
             </span>
             <span className="flex items-center gap-1">
               <Bike size={14} />
-              Delivery <PriceDisplay cents={restaurant.deliveryFee} />
+              {t('delivery')} <PriceDisplay cents={restaurant.deliveryFee} />
             </span>
             <span className="flex items-center gap-1">
               <MapPin size={14} />

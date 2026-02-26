@@ -1,0 +1,23 @@
+{
+  "checkout": {
+    "title": "Checkout",
+    "emptyCart": "Your cart is empty",
+    "emptyCartHint": "Add items to your cart before checking out",
+    "placeOrder": "Place Order",
+    "placingOrder": "Placing order...",
+    "deliveryAddress": "Delivery Address",
+    "streetAddress": "Street Address",
+    "addressPlaceholder": "123 Main St, Apt 4B",
+    "deliveryInstructions": "Delivery Instructions (optional)",
+    "instructionsPlaceholder": "Ring doorbell, leave at door, etc.",
+    "paymentMethod": "Payment Method",
+    "creditCard": "Credit Card",
+    "cashOnDelivery": "Cash on Delivery",
+    "pix": "PIX",
+    "orderReview": "Order Review",
+    "from": "From {restaurantName}",
+    "subtotal": "Subtotal",
+    "deliveryFee": "Delivery fee",
+    "total": "Total"
+  }
+}

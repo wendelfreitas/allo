@@ -4,7 +4,8 @@ import { Card } from '@allo/ui';
 import { Badge } from '@allo/ui';
 import { Clock, Bike } from 'lucide-react';
 import Image from 'next/image';
-import Link from 'next/link';
+import { useTranslations } from 'next-intl';
+import { Link } from '@/i18n/navigation';
 import { StarRating } from '../../shared/StarRating/StarRating';
 import { PriceDisplay } from '../../shared/PriceDisplay/PriceDisplay';
 import type { Restaurant } from '../../../app/api/_data/types';
@@ -15,6 +16,8 @@ interface RestaurantCardProps {
 }
 
 export function RestaurantCard({ restaurant }: RestaurantCardProps) {
+  const t = useTranslations('common');
+
   return (
     <Link href={`/restaurants/${restaurant.slug}`}>
       <motion.div whileHover={{ y: -4 }} transition={{ duration: 0.2 }}>
@@ -29,12 +32,12 @@ export function RestaurantCard({ restaurant }: RestaurantCardProps) {
             />
             {!restaurant.isOpen && (
               <div className="absolute inset-0 flex items-center justify-center bg-black/60">
-                <span className="text-lg font-semibold text-white">Closed</span>
+                <span className="text-lg font-semibold text-white">{t('closed')}</span>
               </div>
             )}
             {restaurant.isFeatured && (
               <Badge className="absolute left-3 top-3 bg-primary text-primary-foreground">
-                Featured
+                {t('featured')}
               </Badge>
             )}
           </div>
@@ -59,14 +62,14 @@ export function RestaurantCard({ restaurant }: RestaurantCardProps) {
               <span className="flex items-center gap-1">
                 <Bike size={12} />
                 {restaurant.deliveryFee === 0 ? (
-                  <span className="text-primary">Free</span>
+                  <span className="text-primary">{t('free')}</span>
                 ) : (
                   <PriceDisplay cents={restaurant.deliveryFee} />
                 )}
               </span>
               {restaurant.minimumOrder > 0 && (
                 <span>
-                  Min. <PriceDisplay cents={restaurant.minimumOrder} />
+                  {t('min')} <PriceDisplay cents={restaurant.minimumOrder} />
                 </span>
               )}
             </div>

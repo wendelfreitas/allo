@@ -8,20 +8,13 @@ import {
   Bike,
   PartyPopper,
 } from 'lucide-react';
+import { useTranslations } from 'next-intl';
 import { motion } from 'framer-motion';
 import type { OrderStatus } from '../../../app/api/_data/types';
 
 interface OrderProgressProps {
   status: OrderStatus;
 }
-
-const steps: { status: OrderStatus; label: string; icon: typeof Check }[] = [
-  { status: 'confirmed', label: 'Confirmed', icon: Clock },
-  { status: 'preparing', label: 'Preparing', icon: ChefHat },
-  { status: 'ready', label: 'Ready', icon: Package },
-  { status: 'out_for_delivery', label: 'On the way', icon: Bike },
-  { status: 'delivered', label: 'Delivered', icon: PartyPopper },
-];
 
 const STATUS_ORDER: OrderStatus[] = [
   'confirmed',
@@ -31,8 +24,17 @@ const STATUS_ORDER: OrderStatus[] = [
   'delivered',
 ];
 
+const STEP_ICONS = [Clock, ChefHat, Package, Bike, PartyPopper];
+
 export function OrderProgress({ status }: OrderProgressProps) {
+  const t = useTranslations('order.status');
   const currentIndex = STATUS_ORDER.indexOf(status);
+
+  const steps = STATUS_ORDER.map((s, i) => ({
+    status: s,
+    label: t(s),
+    icon: STEP_ICONS[i]!,
+  }));
 
   return (
     <div className="space-y-4">

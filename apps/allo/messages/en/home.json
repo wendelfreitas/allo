@@ -1,0 +1,44 @@
+{
+  "home": {
+    "hero": {
+      "badge": "Premium Food Delivery",
+      "titleStart": "Discover the",
+      "titleHighlight": "finest",
+      "titleEnd": "food near you",
+      "subtitle": "From local favorites to award-winning restaurants, get premium meals delivered to your door in minutes.",
+      "searchPlaceholder": "Search restaurants, cuisines, dishes...",
+      "searchButton": "Search",
+      "browseAll": "Browse all restaurants"
+    },
+    "categories": {
+      "label": "Categories",
+      "title": "What are you craving?"
+    },
+    "featured": {
+      "label": "Top Picks",
+      "title": "Featured restaurants",
+      "viewAll": "View all",
+      "viewAllRestaurants": "View all restaurants"
+    },
+    "promos": {
+      "label": "Deals",
+      "title": "Special offers for you"
+    },
+    "metrics": {
+      "restaurants": "Restaurants",
+      "happyCustomers": "Happy customers",
+      "avgDelivery": "Avg. delivery",
+      "appRating": "App rating"
+    },
+    "howItWorks": {
+      "label": "How It Works",
+      "title": "Three steps to delicious",
+      "step1Title": "Browse & Choose",
+      "step1Description": "Explore restaurants near you, filter by cuisine, and find your perfect meal.",
+      "step2Title": "Order & Pay",
+      "step2Description": "Customize your order, add to cart, and pay securely — all in a few taps.",
+      "step3Title": "Track & Enjoy",
+      "step3Description": "Follow your order in real-time from kitchen to doorstep. Bon appétit!"
+    }
+  }
+}

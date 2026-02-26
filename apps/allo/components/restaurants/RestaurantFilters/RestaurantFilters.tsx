@@ -1,6 +1,7 @@
 'use client';
 
 import { Badge, Skeleton } from '@allo/ui';
+import { useTranslations } from 'next-intl';
 import { useCategories } from '../../../hooks/use-categories/use-categories';
 
 interface RestaurantFiltersProps {
@@ -12,6 +13,7 @@ export function RestaurantFilters({
   selectedCuisine,
   onCuisineChange,
 }: RestaurantFiltersProps) {
+  const t = useTranslations('common');
   const { data: categories, isLoading } = useCategories();
 
   return (
@@ -21,7 +23,7 @@ export function RestaurantFilters({
         className="cursor-pointer transition-colors"
         onClick={() => onCuisineChange(null)}
       >
-        All
+        {t('filters.all')}
       </Badge>
 
       {isLoading

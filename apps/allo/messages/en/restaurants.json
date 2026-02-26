@@ -1,0 +1,10 @@
+{
+  "restaurants": {
+    "title": "Restaurants",
+    "subtitle": "Discover the best food near you",
+    "searchPlaceholder": "Search restaurants...",
+    "showing": "Showing {count} of {total} restaurants",
+    "noResults": "No restaurants found",
+    "noResultsHint": "Try adjusting your search or filters"
+  }
+}

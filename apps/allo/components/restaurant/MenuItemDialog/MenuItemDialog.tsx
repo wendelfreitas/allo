@@ -10,6 +10,7 @@ import {
   Button,
 } from '@allo/ui';
 import Image from 'next/image';
+import { useTranslations } from 'next-intl';
 import { PriceDisplay } from '../../shared/PriceDisplay/PriceDisplay';
 import { QuantitySelector } from '../../shared/QuantitySelector/QuantitySelector';
 import { useState } from 'react';
@@ -28,6 +29,7 @@ export function MenuItemDialog({
   onClose,
   onAddToCart,
 }: MenuItemDialogProps) {
+  const t = useTranslations('restaurant');
   const [quantity, setQuantity] = useState(1);
 
   if (!item) return null;
@@ -90,7 +92,7 @@ export function MenuItemDialog({
           </div>
 
           <Button className="mt-6 w-full" size="lg" onClick={handleAdd}>
-            Add to cart — <PriceDisplay cents={item.price * quantity} />
+            {t('addToCart')} <PriceDisplay cents={item.price * quantity} />
           </Button>
         </div>
       </DialogContent>

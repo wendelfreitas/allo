@@ -1,15 +1,17 @@
 'use client';
 
+import { useTranslations } from 'next-intl';
 import { useRestaurants } from '../../../hooks/use-restaurants/use-restaurants';
 import { RestaurantCard } from '../../restaurants/RestaurantCard/RestaurantCard';
 import { Skeleton } from '@allo/ui';
 import { AnimatedSection } from '../../shared/AnimatedSection/AnimatedSection';
 import { SectionLabel } from '../../shared/SectionLabel/SectionLabel';
-import Link from 'next/link';
+import { Link } from '@/i18n/navigation';
 import { Button } from '@allo/ui';
 import { ArrowRight } from 'lucide-react';
 
 export function FeaturedRestaurants() {
+  const t = useTranslations('home.featured');
   const { data, isLoading } = useRestaurants({
     featured: 'true',
     pageSize: '6',
@@ -21,14 +23,14 @@ export function FeaturedRestaurants() {
         <AnimatedSection>
           <div className="flex items-end justify-between">
             <div>
-              <SectionLabel>Top Picks</SectionLabel>
+              <SectionLabel>{t('label')}</SectionLabel>
               <h2 className="mt-2 text-2xl font-bold sm:text-3xl">
-                Featured restaurants
+                {t('title')}
               </h2>
             </div>
             <Link href="/restaurants">
               <Button variant="ghost" className="hidden sm:flex">
-                View all
+                {t('viewAll')}
                 <ArrowRight size={16} className="ml-1" />
               </Button>
             </Link>
@@ -54,7 +56,7 @@ export function FeaturedRestaurants() {
         <div className="mt-8 text-center sm:hidden">
           <Link href="/restaurants">
             <Button variant="outline">
-              View all restaurants
+              {t('viewAllRestaurants')}
               <ArrowRight size={16} className="ml-1" />
             </Button>
           </Link>

@@ -1,19 +1,21 @@
 'use client';
 
 import { use, useState } from 'react';
+import { useTranslations } from 'next-intl';
 import { Tabs, TabsContent, TabsList, TabsTrigger, Skeleton } from '@allo/ui';
-import { useRestaurant } from '../../../../hooks/use-restaurant/use-restaurant';
-import { RestaurantHeader } from '../../../../components/restaurant/RestaurantHeader/RestaurantHeader';
-import { MenuCategory } from '../../../../components/restaurant/MenuCategory/MenuCategory';
-import { MenuItemDialog } from '../../../../components/restaurant/MenuItemDialog/MenuItemDialog';
-import { useCartStore } from '../../../../store/cart';
-import type { MenuItem } from '../../../../app/api/_data/types';
+import { useRestaurant } from '../../../../../hooks/use-restaurant/use-restaurant';
+import { RestaurantHeader } from '../../../../../components/restaurant/RestaurantHeader/RestaurantHeader';
+import { MenuCategory } from '../../../../../components/restaurant/MenuCategory/MenuCategory';
+import { MenuItemDialog } from '../../../../../components/restaurant/MenuItemDialog/MenuItemDialog';
+import { useCartStore } from '../../../../../store/cart';
+import type { MenuItem } from '../../../../../app/api/_data/types';
 
 export default function RestaurantPage({
   params,
 }: {
   params: Promise<{ slug: string }>;
 }) {
+  const t = useTranslations('restaurant');
   const { slug } = use(params);
   const { data: restaurant, isLoading } = useRestaurant(slug);
   const [selectedItem, setSelectedItem] = useState<MenuItem | null>(null);
@@ -55,7 +57,7 @@ export default function RestaurantPage({
   if (!restaurant) {
     return (
       <div className="flex h-96 items-center justify-center">
-        <p className="text-lg text-muted-foreground">Restaurant not found</p>
+        <p className="text-lg text-muted-foreground">{t('notFound')}</p>
       </div>
     );
   }

@@ -1,0 +1,41 @@
+{
+  "common": {
+    "navbar": {
+      "restaurants": "Restaurants"
+    },
+    "footer": {
+      "tagline": "Premium food delivery from the best restaurants in your city.",
+      "explore": "Explore",
+      "restaurants": "Restaurants",
+      "pizza": "Pizza",
+      "sushi": "Sushi",
+      "burgers": "Burgers",
+      "company": "Company",
+      "aboutUs": "About Us",
+      "careers": "Careers",
+      "blog": "Blog",
+      "support": "Support",
+      "helpCenter": "Help Center",
+      "contact": "Contact",
+      "terms": "Terms",
+      "copyright": "© {year} allO Eats. All rights reserved. This is a demo application."
+    },
+    "sortOptions": {
+      "rating": "Top Rated",
+      "delivery_time": "Fastest Delivery",
+      "delivery_fee": "Lowest Fee",
+      "name": "Name A-Z"
+    },
+    "filters": {
+      "all": "All"
+    },
+    "delivery": "Delivery",
+    "free": "Free",
+    "min": "Min.",
+    "closed": "Closed",
+    "featured": "Featured",
+    "popular": "Popular",
+    "backToRestaurants": "Back to restaurants",
+    "browseRestaurants": "Browse Restaurants"
+  }
+}

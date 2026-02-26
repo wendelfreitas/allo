@@ -1,0 +1,6 @@
+{
+  "restaurant": {
+    "notFound": "Restaurant not found",
+    "addToCart": "Add to cart —"
+  }
+}

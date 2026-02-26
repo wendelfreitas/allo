@@ -2,12 +2,13 @@
 
 import { Button, Input } from '@allo/ui';
 import { Search, ArrowRight } from 'lucide-react';
-import Link from 'next/link';
+import { useTranslations } from 'next-intl';
+import { Link, useRouter } from '@/i18n/navigation';
 import { useState } from 'react';
-import { useRouter } from 'next/navigation';
 import { motion } from 'framer-motion';
 
 export function HeroSection() {
+  const t = useTranslations('home.hero');
   const [query, setQuery] = useState('');
   const router = useRouter();
 
@@ -34,7 +35,7 @@ export function HeroSection() {
             transition={{ duration: 0.6 }}
           >
             <span className="mb-4 inline-block text-xs font-bold uppercase tracking-[0.2em] text-primary">
-              Premium Food Delivery
+              {t('badge')}
             </span>
           </motion.div>
 
@@ -44,10 +45,10 @@ export function HeroSection() {
             transition={{ duration: 0.6, delay: 0.1 }}
             className="mt-4 text-4xl font-bold tracking-tight sm:text-5xl lg:text-6xl"
           >
-            Discover the{' '}
-            <span className="font-playfair italic text-primary">finest</span>
+            {t('titleStart')}{' '}
+            <span className="font-playfair italic text-primary">{t('titleHighlight')}</span>
             <br />
-            food near you
+            {t('titleEnd')}
           </motion.h1>
 
           <motion.p
@@ -56,8 +57,7 @@ export function HeroSection() {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="mt-6 text-lg text-muted-foreground"
           >
-            From local favorites to award-winning restaurants, get premium meals
-            delivered to your door in minutes.
+            {t('subtitle')}
           </motion.p>
 
           <motion.form
@@ -74,14 +74,14 @@ export function HeroSection() {
               />
               <Input
                 type="text"
-                placeholder="Search restaurants, cuisines, dishes..."
+                placeholder={t('searchPlaceholder')}
                 value={query}
                 onChange={(e) => setQuery(e.target.value)}
                 className="h-12 pl-10 text-base"
               />
             </div>
             <Button type="submit" size="lg" className="h-12 px-6">
-              Search
+              {t('searchButton')}
             </Button>
           </motion.form>
 
@@ -96,7 +96,7 @@ export function HeroSection() {
                 variant="ghost"
                 className="text-muted-foreground hover:text-foreground"
               >
-                Browse all restaurants
+                {t('browseAll')}
                 <ArrowRight size={16} className="ml-1" />
               </Button>
             </Link>

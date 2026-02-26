@@ -1,6 +1,7 @@
 'use client';
 
 import { Input, Label } from '@allo/ui';
+import { useTranslations } from 'next-intl';
 
 interface DeliveryFormProps {
   address: string;
@@ -15,25 +16,27 @@ export function DeliveryForm({
   instructions,
   onInstructionsChange,
 }: DeliveryFormProps) {
+  const t = useTranslations('checkout');
+
   return (
     <div className="space-y-4">
-      <h2 className="text-lg font-semibold">Delivery Address</h2>
+      <h2 className="text-lg font-semibold">{t('deliveryAddress')}</h2>
       <div className="space-y-3">
         <div>
-          <Label htmlFor="address">Street Address</Label>
+          <Label htmlFor="address">{t('streetAddress')}</Label>
           <Input
             id="address"
-            placeholder="123 Main St, Apt 4B"
+            placeholder={t('addressPlaceholder')}
             value={address}
             onChange={(e) => onAddressChange(e.target.value)}
             className="mt-1"
           />
         </div>
         <div>
-          <Label htmlFor="instructions">Delivery Instructions (optional)</Label>
+          <Label htmlFor="instructions">{t('deliveryInstructions')}</Label>
           <Input
             id="instructions"
-            placeholder="Ring doorbell, leave at door, etc."
+            placeholder={t('instructionsPlaceholder')}
             value={instructions}
             onChange={(e) => onInstructionsChange(e.target.value)}
             className="mt-1"

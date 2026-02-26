@@ -1,0 +1,12 @@
+{
+  "cart": {
+    "yourOrder": "Seu Pedido",
+    "from": "de {restaurantName}",
+    "proceedToCheckout": "Ir para o Pagamento",
+    "empty": "Seu carrinho está vazio",
+    "emptyHint": "Explore restaurantes e adicione itens para começar",
+    "subtotal": "Subtotal",
+    "deliveryFee": "Taxa de entrega",
+    "total": "Total"
+  }
+}

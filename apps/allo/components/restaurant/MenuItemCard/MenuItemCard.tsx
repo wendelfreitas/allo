@@ -2,6 +2,7 @@
 
 import { Card, Badge } from '@allo/ui';
 import Image from 'next/image';
+import { useTranslations } from 'next-intl';
 import { PriceDisplay } from '../../shared/PriceDisplay/PriceDisplay';
 import type { MenuItem } from '../../../app/api/_data/types';
 
@@ -11,6 +12,8 @@ interface MenuItemCardProps {
 }
 
 export function MenuItemCard({ item, onClick }: MenuItemCardProps) {
+  const t = useTranslations('common');
+
   return (
     <Card
       className="flex cursor-pointer overflow-hidden border-border/50 bg-card transition-all hover:bg-muted/50 hover:shadow-md"
@@ -25,7 +28,7 @@ export function MenuItemCard({ item, onClick }: MenuItemCardProps) {
                 variant="secondary"
                 className="text-[10px] bg-primary/10 text-primary"
               >
-                Popular
+                {t('popular')}
               </Badge>
             )}
           </div>

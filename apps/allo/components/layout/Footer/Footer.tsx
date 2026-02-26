@@ -1,7 +1,12 @@
+'use client';
+
 import { Separator } from '@allo/ui';
-import Link from 'next/link';
+import { useTranslations } from 'next-intl';
+import { Link } from '@/i18n/navigation';
 
 export function Footer() {
+  const t = useTranslations('common.footer');
+
   return (
     <footer className="border-t border-border/50 bg-background">
       <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
@@ -14,19 +19,19 @@ export function Footer() {
               </span>
             </Link>
             <p className="mt-3 text-sm text-muted-foreground">
-              Premium food delivery from the best restaurants in your city.
+              {t('tagline')}
             </p>
           </div>
 
           <div>
-            <h4 className="mb-3 text-sm font-semibold">Explore</h4>
+            <h4 className="mb-3 text-sm font-semibold">{t('explore')}</h4>
             <ul className="space-y-2 text-sm text-muted-foreground">
               <li>
                 <Link
                   href="/restaurants"
                   className="transition-colors hover:text-foreground"
                 >
-                  Restaurants
+                  {t('restaurants')}
                 </Link>
               </li>
               <li>
@@ -34,7 +39,7 @@ export function Footer() {
                   href="/restaurants?cuisine=pizza"
                   className="transition-colors hover:text-foreground"
                 >
-                  Pizza
+                  {t('pizza')}
                 </Link>
               </li>
               <li>
@@ -42,7 +47,7 @@ export function Footer() {
                   href="/restaurants?cuisine=sushi"
                   className="transition-colors hover:text-foreground"
                 >
-                  Sushi
+                  {t('sushi')}
                 </Link>
               </li>
               <li>
@@ -50,49 +55,49 @@ export function Footer() {
                   href="/restaurants?cuisine=burgers"
                   className="transition-colors hover:text-foreground"
                 >
-                  Burgers
+                  {t('burgers')}
                 </Link>
               </li>
             </ul>
           </div>
 
           <div>
-            <h4 className="mb-3 text-sm font-semibold">Company</h4>
+            <h4 className="mb-3 text-sm font-semibold">{t('company')}</h4>
             <ul className="space-y-2 text-sm text-muted-foreground">
               <li>
                 <span className="transition-colors hover:text-foreground cursor-pointer">
-                  About Us
+                  {t('aboutUs')}
                 </span>
               </li>
               <li>
                 <span className="transition-colors hover:text-foreground cursor-pointer">
-                  Careers
+                  {t('careers')}
                 </span>
               </li>
               <li>
                 <span className="transition-colors hover:text-foreground cursor-pointer">
-                  Blog
+                  {t('blog')}
                 </span>
               </li>
             </ul>
           </div>
 
           <div>
-            <h4 className="mb-3 text-sm font-semibold">Support</h4>
+            <h4 className="mb-3 text-sm font-semibold">{t('support')}</h4>
             <ul className="space-y-2 text-sm text-muted-foreground">
               <li>
                 <span className="transition-colors hover:text-foreground cursor-pointer">
-                  Help Center
+                  {t('helpCenter')}
                 </span>
               </li>
               <li>
                 <span className="transition-colors hover:text-foreground cursor-pointer">
-                  Contact
+                  {t('contact')}
                 </span>
               </li>
               <li>
                 <span className="transition-colors hover:text-foreground cursor-pointer">
-                  Terms
+                  {t('terms')}
                 </span>
               </li>
             </ul>
@@ -102,8 +107,7 @@ export function Footer() {
         <Separator className="my-8" />
 
         <p className="text-center text-xs text-muted-foreground">
-          &copy; {new Date().getFullYear()} allO Eats. All rights reserved. This
-          is a demo application.
+          {t('copyright', { year: new Date().getFullYear() })}
         </p>
       </div>
     </footer>

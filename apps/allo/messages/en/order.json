@@ -1,0 +1,30 @@
+{
+  "order": {
+    "notFound": "Order not found",
+    "notFoundHint": "This order doesn't exist or has expired.",
+    "tracking": "Order Tracking",
+    "estimatedDelivery": "Estimated delivery: {time}",
+    "details": "Order Details",
+    "items": "Items",
+    "subtotal": "Subtotal",
+    "deliveryFee": "Delivery fee",
+    "total": "Total",
+    "creditCard": "Credit Card",
+    "pix": "PIX",
+    "cashOnDelivery": "Cash on Delivery",
+    "status": {
+      "confirmed": "Confirmed",
+      "preparing": "Preparing",
+      "ready": "Ready",
+      "out_for_delivery": "On the way",
+      "delivered": "Delivered"
+    },
+    "statusMessages": {
+      "confirmed": "Your order has been confirmed! The restaurant will start preparing it soon.",
+      "preparing": "The kitchen is working on your order. Sit tight!",
+      "ready": "Your order is ready and waiting for a delivery partner.",
+      "out_for_delivery": "Your order is on its way! The delivery partner is heading to you.",
+      "delivered": "Your order has been delivered. Enjoy your meal!"
+    }
+  }
+}

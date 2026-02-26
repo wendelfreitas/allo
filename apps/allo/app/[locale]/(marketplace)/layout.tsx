@@ -1,6 +1,6 @@
-import { Navbar } from '../../components/layout/Navbar/Navbar';
-import { Footer } from '../../components/layout/Footer/Footer';
-import { CartDrawer } from '../../components/layout/CartDrawer/CartDrawer';
+import { Navbar } from '../../../components/layout/Navbar/Navbar';
+import { Footer } from '../../../components/layout/Footer/Footer';
+import { CartDrawer } from '../../../components/layout/CartDrawer/CartDrawer';
 
 export default function MarketplaceLayout({
   children,

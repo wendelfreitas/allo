@@ -1,0 +1,44 @@
+{
+  "home": {
+    "hero": {
+      "badge": "Entrega Premium de Comida",
+      "titleStart": "Descubra a",
+      "titleHighlight": "melhor",
+      "titleEnd": "comida perto de você",
+      "subtitle": "Dos favoritos locais aos restaurantes premiados, receba refeições premium na sua porta em minutos.",
+      "searchPlaceholder": "Buscar restaurantes, culinárias, pratos...",
+      "searchButton": "Buscar",
+      "browseAll": "Ver todos os restaurantes"
+    },
+    "categories": {
+      "label": "Categorias",
+      "title": "O que você está querendo?"
+    },
+    "featured": {
+      "label": "Destaques",
+      "title": "Restaurantes em destaque",
+      "viewAll": "Ver todos",
+      "viewAllRestaurants": "Ver todos os restaurantes"
+    },
+    "promos": {
+      "label": "Ofertas",
+      "title": "Ofertas especiais para você"
+    },
+    "metrics": {
+      "restaurants": "Restaurantes",
+      "happyCustomers": "Clientes felizes",
+      "avgDelivery": "Entrega média",
+      "appRating": "Nota do app"
+    },
+    "howItWorks": {
+      "label": "Como Funciona",
+      "title": "Três passos para uma delícia",
+      "step1Title": "Explore & Escolha",
+      "step1Description": "Explore restaurantes perto de você, filtre por culinária e encontre a refeição perfeita.",
+      "step2Title": "Peça & Pague",
+      "step2Description": "Personalize seu pedido, adicione ao carrinho e pague com segurança — tudo em poucos toques.",
+      "step3Title": "Acompanhe & Aproveite",
+      "step3Description": "Acompanhe seu pedido em tempo real da cozinha até a sua porta. Bom apetite!"
+    }
+  }
+}

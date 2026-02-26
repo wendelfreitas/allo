@@ -1,5 +1,6 @@
 'use client';
 
+import { useTranslations } from 'next-intl';
 import { usePromotions } from '../../../hooks/use-promotions/use-promotions';
 import { Badge, Button, Skeleton } from '@allo/ui';
 import { AnimatedSection } from '../../shared/AnimatedSection/AnimatedSection';
@@ -7,6 +8,7 @@ import { SectionLabel } from '../../shared/SectionLabel/SectionLabel';
 import Image from 'next/image';
 
 export function PromoBanners() {
+  const t = useTranslations('home.promos');
   const { data: promotions, isLoading } = usePromotions();
 
   if (isLoading) {
@@ -28,9 +30,9 @@ export function PromoBanners() {
     <section className="py-16">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <AnimatedSection>
-          <SectionLabel>Deals</SectionLabel>
+          <SectionLabel>{t('label')}</SectionLabel>
           <h2 className="mt-2 text-2xl font-bold sm:text-3xl">
-            Special offers for you
+            {t('title')}
           </h2>
         </AnimatedSection>
 

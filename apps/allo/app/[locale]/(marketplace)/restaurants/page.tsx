@@ -2,14 +2,16 @@
 
 import { Suspense, useState } from 'react';
 import { useSearchParams } from 'next/navigation';
+import { useTranslations } from 'next-intl';
 import { Input, Skeleton } from '@allo/ui';
 import { Search } from 'lucide-react';
-import { useRestaurants } from '../../../hooks/use-restaurants/use-restaurants';
-import { RestaurantFilters } from '../../../components/restaurants/RestaurantFilters/RestaurantFilters';
-import { SortSelect } from '../../../components/restaurants/SortSelect/SortSelect';
-import { RestaurantGrid } from '../../../components/restaurants/RestaurantGrid/RestaurantGrid';
+import { useRestaurants } from '../../../../hooks/use-restaurants/use-restaurants';
+import { RestaurantFilters } from '../../../../components/restaurants/RestaurantFilters/RestaurantFilters';
+import { SortSelect } from '../../../../components/restaurants/SortSelect/SortSelect';
+import { RestaurantGrid } from '../../../../components/restaurants/RestaurantGrid/RestaurantGrid';
 
 function RestaurantsContent() {
+  const t = useTranslations('restaurants');
   const searchParams = useSearchParams();
   const initialCuisine = searchParams.get('cuisine');
   const initialQuery = searchParams.get('q') || '';
@@ -28,9 +30,9 @@ function RestaurantsContent() {
   return (
     <div className="mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8">
       <div className="mb-8">
-        <h1 className="text-3xl font-bold">Restaurants</h1>
+        <h1 className="text-3xl font-bold">{t('title')}</h1>
         <p className="mt-1 text-muted-foreground">
-          Discover the best food near you
+          {t('subtitle')}
         </p>
       </div>
 
@@ -42,7 +44,7 @@ function RestaurantsContent() {
           />
           <Input
             type="text"
-            placeholder="Search restaurants..."
+            placeholder={t('searchPlaceholder')}
             value={query}
             onChange={(e) => setQuery(e.target.value)}
             className="pl-10"
@@ -62,7 +64,7 @@ function RestaurantsContent() {
 
       {data && data.total > 0 && (
         <p className="mt-8 text-center text-sm text-muted-foreground">
-          Showing {data.data.length} of {data.total} restaurants
+          {t('showing', { count: data.data.length, total: data.total })}
         </p>
       )}
     </div>

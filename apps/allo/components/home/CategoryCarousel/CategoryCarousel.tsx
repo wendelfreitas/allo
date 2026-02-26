@@ -1,21 +1,23 @@
 'use client';
 
-import Link from 'next/link';
+import { useTranslations } from 'next-intl';
+import { Link } from '@/i18n/navigation';
 import { useCategories } from '../../../hooks/use-categories/use-categories';
 import { Skeleton } from '@allo/ui';
 import { AnimatedSection } from '../../shared/AnimatedSection/AnimatedSection';
 import { SectionLabel } from '../../shared/SectionLabel/SectionLabel';
 
 export function CategoryCarousel() {
+  const t = useTranslations('home.categories');
   const { data: categories, isLoading } = useCategories();
 
   return (
     <section className="py-16">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <AnimatedSection>
-          <SectionLabel>Categories</SectionLabel>
+          <SectionLabel>{t('label')}</SectionLabel>
           <h2 className="mt-2 text-2xl font-bold sm:text-3xl">
-            What are you craving?
+            {t('title')}
           </h2>
         </AnimatedSection>
 

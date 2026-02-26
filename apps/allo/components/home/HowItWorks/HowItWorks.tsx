@@ -1,38 +1,38 @@
 'use client';
 
 import { Search, UtensilsCrossed, Bike } from 'lucide-react';
+import { useTranslations } from 'next-intl';
 import { AnimatedSection } from '../../shared/AnimatedSection/AnimatedSection';
 import { SectionLabel } from '../../shared/SectionLabel/SectionLabel';
 
-const steps = [
-  {
-    icon: Search,
-    title: 'Browse & Choose',
-    description:
-      'Explore restaurants near you, filter by cuisine, and find your perfect meal.',
-  },
-  {
-    icon: UtensilsCrossed,
-    title: 'Order & Pay',
-    description:
-      'Customize your order, add to cart, and pay securely — all in a few taps.',
-  },
-  {
-    icon: Bike,
-    title: 'Track & Enjoy',
-    description:
-      'Follow your order in real-time from kitchen to doorstep. Bon appétit!',
-  },
-];
-
 export function HowItWorks() {
+  const t = useTranslations('home.howItWorks');
+
+  const steps = [
+    {
+      icon: Search,
+      title: t('step1Title'),
+      description: t('step1Description'),
+    },
+    {
+      icon: UtensilsCrossed,
+      title: t('step2Title'),
+      description: t('step2Description'),
+    },
+    {
+      icon: Bike,
+      title: t('step3Title'),
+      description: t('step3Description'),
+    },
+  ];
+
   return (
     <section className="py-20">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <AnimatedSection className="text-center">
-          <SectionLabel>How It Works</SectionLabel>
+          <SectionLabel>{t('label')}</SectionLabel>
           <h2 className="mt-2 text-2xl font-bold sm:text-3xl">
-            Three steps to delicious
+            {t('title')}
           </h2>
         </AnimatedSection>
 

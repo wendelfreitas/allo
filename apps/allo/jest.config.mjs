@@ -24,5 +24,6 @@ export default {
     '^@allo/utils/(.*)$': '<rootDir>/../../packages/utils/src/$1',
     '^@allo/ui$': '<rootDir>/../../packages/ui/src/index.ts',
     '^@allo/hooks$': '<rootDir>/../../packages/hooks/src/index.ts',
+    '^@/(.*)$': '<rootDir>/$1',
   },
 };
